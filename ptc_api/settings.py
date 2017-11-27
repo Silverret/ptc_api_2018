@@ -125,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# External API calls
+EXTERNAL_API_URLS = {'tugo': 'https://api.tugo.com/v1/travelsafe/countries/'}
+EXERNAL_API_HEADERS = {'tugo' : {"X-Auth-API-Key":"jttuskf9wetdbzspvtt6kagb"}}
+
+# Cors options
+CORS_ORIGIN_ALLOW_ALL = True

@@ -1,9 +1,9 @@
 """
-The models of the objects available through this API are defined here
+The models of the objects available through this API are defined here :
+Profile, Trip, Segment, Task
 """
 from django.db import models
 from django.contrib.auth.models import User
-
 
 
 class Profile(models.Model):
@@ -52,14 +52,13 @@ class Trip(models.Model):
 
         task_factory = TaskFactory(trip=self)
         for task in task_factory.create_tasks().values():
-            task.trip = self
             task.save()
 
     def delete_generated_tasks(self):
         """
         Delete every task currently, has to be improved.
         """
-        for task in Task.objects.filter(trip=self):
+        for task in self.tasks.all():
             task.delete()
 
 
@@ -102,7 +101,6 @@ class Task(models.Model):
     deadline = models.DateField(auto_now_add=False, null=True, blank=True)
     completed = models.BooleanField(default=False)
     comments = models.TextField(null=True, blank=True)
-    auto = models.BooleanField()
 
     def __str__(self):
         return self.title

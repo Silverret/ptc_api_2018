@@ -77,9 +77,9 @@ class TripViewSet(viewsets.ModelViewSet):
     """
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    permission_classes = [IsOwnerOrReadOnly] 
+    permission_classes = [IsOwnerOrReadOnly]
     """
-    permission_classes has to be improved to disable anonymousUser to 
+    permission_classes has to be improved to disable anonymousUser to
     GET the route "generate_tasks"
     """
 
