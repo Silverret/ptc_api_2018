@@ -12,13 +12,15 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
             return True
-        try:
-            traveler_id = request.data['traveler'].split("/")[-2]
-            if traveler_id is not None:
-                traveler = User.objects.get(id=traveler_id)
-                return request.user == traveler
-        except KeyError:
-            return False
+        if request.method == 'POST':
+            try:
+                traveler_id = request.data['traveler'].split("/")[-2]
+                if traveler_id is not None:
+                    traveler = User.objects.get(id=traveler_id)
+                    return request.user == traveler
+            except KeyError:
+                return False
+        return True
 
     def has_object_permission(self, request, view, obj):
         # Read permissions are allowed to any request,
@@ -35,16 +37,17 @@ class IsOwnerOfTheTripOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             print("perm: SAFE_METHODS")
             return True
-        try:
-            cor_trip_id = request.data['trip'].split("/")[-2]
-            if cor_trip_id is not None:
-                cor_trip = Trip.objects.get(id=cor_trip_id)
-                print("perm: User check ", request.user == cor_trip.traveler)
-                return request.user == cor_trip.traveler
-        except KeyError:
-            print("perm: KEY ERROR")
-            return False
-        return False
+        if request.method == 'POST':
+            try:
+                cor_trip_id = request.data['trip'].split("/")[-2]
+                if cor_trip_id is not None:
+                    cor_trip = Trip.objects.get(id=cor_trip_id)
+                    print("perm: User check ", request.user == cor_trip.traveler)
+                    return request.user == cor_trip.traveler
+            except KeyError:
+                print("perm: KEY ERROR")
+                return False
+        return True
 
     def has_object_permission(self, request, view, obj):
         # Read permissions are allowed to any request,

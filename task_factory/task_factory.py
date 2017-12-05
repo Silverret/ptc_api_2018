@@ -28,6 +28,8 @@ class TaskFactory:
         for task in self.create_vaccinces_tasks():
             tasks.add(task)
 
+        for task in tasks:
+            task.auto = True
         return tasks
 
     def create_weather_task(self):
