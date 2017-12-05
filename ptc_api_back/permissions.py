@@ -33,14 +33,17 @@ class IsOwnerOfTheTripOrReadOnly(permissions.BasePermission):
     """
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
+            print("SAFE_METHODS")
             return True
         try:
             cor_trip_id = request.data['trip'].split("/")[-2]
             if cor_trip_id is not None:
                 cor_trip = Trip.objects.get(id=cor_trip_id)
+                print("User check", request.user == cor_trip.traveler)
                 return request.user == cor_trip.traveler
         except KeyError:
             return False
+        return False
 
     def has_object_permission(self, request, view, obj):
         # Read permissions are allowed to any request,
