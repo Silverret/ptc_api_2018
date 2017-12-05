@@ -101,6 +101,7 @@ class Task(models.Model):
     deadline = models.DateField(auto_now_add=False, null=True, blank=True)
     completed = models.BooleanField(default=False)
     comments = models.TextField(null=True, blank=True)
+    auto = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

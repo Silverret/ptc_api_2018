@@ -9,7 +9,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Task
-        fields = ('url', 'id', 'trip', 'title', 'deadline', 'completed', 'comments')
+        fields = ('url', 'id', 'trip', 'title', 'deadline', 'completed', 'comments','auto')
 
 
 
