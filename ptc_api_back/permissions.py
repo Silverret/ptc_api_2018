@@ -33,15 +33,16 @@ class IsOwnerOfTheTripOrReadOnly(permissions.BasePermission):
     """
     def has_permission(self, request, view):
         if request.method in permissions.SAFE_METHODS:
-            print("SAFE_METHODS")
+            print("perm: SAFE_METHODS")
             return True
         try:
             cor_trip_id = request.data['trip'].split("/")[-2]
             if cor_trip_id is not None:
                 cor_trip = Trip.objects.get(id=cor_trip_id)
-                print("User check", request.user == cor_trip.traveler)
+                print("perm: User check ", request.user == cor_trip.traveler)
                 return request.user == cor_trip.traveler
         except KeyError:
+            print("perm: KEY ERROR")
             return False
         return False
 
@@ -50,7 +51,7 @@ class IsOwnerOfTheTripOrReadOnly(permissions.BasePermission):
         # so we'll always allow GET, HEAD or OPTIONS requests
         if request.method in permissions.SAFE_METHODS:
             return True
-
+        print("obj_perm: User check ", obj.trip.traveler == request.user)
         return obj.trip.traveler == request.user
 
 class IsUserOrReadOnly(permissions.BasePermission):

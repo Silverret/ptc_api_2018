@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'ptc_api_back',
     'task_factory',
-    'cors_headers',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
