@@ -2,13 +2,16 @@
 Viewsets of the API are defined here
 """
 from django.contrib.auth.models import User
-from rest_framework import permissions, viewsets
+from rest_framework import permissions, viewsets, mixins
 from rest_framework.decorators import api_view, permission_classes, detail_route
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from ptc_api_back.models import Trip, Segment, Task, Profile
 from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer
 from ptc_api_back.permissions import IsOwnerOrReadOnly, IsOwnerOfTheTripOrReadOnly, IsUserOrReadOnly
+from task_factory.models import Country
+from task_factory.serializers import CountrySerializer
+
 
 @api_view(['GET'])
 @permission_classes((permissions.AllowAny, ))
@@ -83,7 +86,7 @@ class TripViewSet(viewsets.ModelViewSet):
     GET the route "generate_tasks"
     """
 
-    @detail_route()
+    @detail_route(methods=['GET'])
     def generate_tasks(self, request, *args, **kwargs):
         """
         This route is called when a traveler want to regenerate every tasks
@@ -91,7 +94,19 @@ class TripViewSet(viewsets.ModelViewSet):
         trip = self.get_object()
         trip.delete_generated_tasks()
         trip.generate_tasks()
-        return Response()
+        tasks = Task.objects.filter(trip=trip)
+        serializer = TaskSerializer(tasks, many=True, context={'request': request})
+        return Response(serializer.data)
+
+    @detail_route(methods=['GET'])
+    def tasks(self, request, *args, **kwargs):
+        """
+        This route is called when a traveler want to regenerate every tasks
+        """
+        trip = self.get_object()
+        tasks = Task.objects.filter(trip=trip)
+        serializer = TaskSerializer(tasks, many=True, context={'request': request})
+        return Response(serializer.data)
 
     def perform_create(self, serializer):
         serializer.save(traveler=self.request.user)
@@ -119,4 +134,8 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsUserOrReadOnly]
+
+class CountryListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
     

@@ -9,7 +9,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Task
-        fields = ('url', 'id', 'trip', 'title', 'deadline', 'completed', 'comments','auto')
+        fields = ('id', 'trip', 'title', 'deadline', 'completed', 'comments','auto')
 
 
 
@@ -35,13 +35,13 @@ class SegmentSerializer(serializers.HyperlinkedModelSerializer):
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
-    tasks = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='task-detail')
+    tasks = TaskSerializer(many=True, read_only=True)
     segments = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='segment-detail')
 
     class Meta:
         model = Trip
         fields = (
-            'url', 'id',
+            'id',
             'traveler',
             'departure_airport', 'departure_country', 'departure_date_time',
             'arrival_airport', 'arrival_country', 'arrival_date_time',

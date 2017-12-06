@@ -1883,7 +1883,7 @@
         "model": "task_factory.Country",
         "pk": 236,
         "fields": {
-            "name": "Viet Nam",
+            "name": "Vietnam",
             "code": "VN"
         }
     },

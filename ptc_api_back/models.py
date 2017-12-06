@@ -15,7 +15,7 @@ class Profile(models.Model):
     nationalities = models.CharField(max_length=255, blank=True)  # Country names please !
     birth_date = models.DateField(null=True, blank=True)
     visas = models.CharField(max_length=255, blank=True)
-    address = models.CharField(max_length=255, blank=True)
+    address = models.CharField(max_length=255, blank=True, default="")
     phone = models.CharField(max_length=20, blank=True)
     visited_countries = models.CharField(max_length=255, blank=True)
     vaccines = models.CharField(max_length=255, blank=True)
@@ -30,12 +30,12 @@ class Trip(models.Model):
     """
     traveler = models.ForeignKey(User, related_name='trips', on_delete=models.CASCADE)
 
-    departure_airport = models.CharField(max_length=255)
     departure_country = models.CharField(max_length=255)
+    departure_airport = models.CharField(max_length=255)
     departure_date_time = models.DateTimeField()
+    arrival_country = models.CharField(max_length=255)
     arrival_airport = models.CharField(max_length=255)
     arrival_date_time = models.DateTimeField()
-    arrival_country = models.CharField(max_length=255)
     return_date_time = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
@@ -51,14 +51,14 @@ class Trip(models.Model):
         from task_factory.task_factory import TaskFactory
 
         task_factory = TaskFactory(trip=self)
-        for task in task_factory.create_tasks().values():
+        for task in task_factory.create_tasks():
             task.save()
 
     def delete_generated_tasks(self):
         """
         Delete every task currently, has to be improved.
         """
-        for task in self.tasks.all():
+        for task in self.tasks.filter(auto=True):
             task.delete()
 
 
@@ -70,12 +70,12 @@ class Segment(models.Model):
     """
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='segments')
 
-    departure_airport = models.CharField(max_length=255)
     departure_country = models.CharField(max_length=255)
+    departure_airport = models.CharField(max_length=255)
     departure_date_time = models.DateTimeField()
+    arrival_country = models.CharField(max_length=255)
     arrival_airport = models.CharField(max_length=255)
     arrival_date_time = models.DateTimeField()
-    arrival_country = models.CharField(max_length=255)
     order = models.IntegerField()
 
 
