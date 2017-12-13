@@ -1,0 +1,60 @@
+[
+    {   "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "cedric",
+            "password": "azertyuiop"
+        }
+    },
+    {   "model": "ptc_api_back.profile",
+        "pk": 1,
+        "fields": {
+            "traveler_id": 1,
+            "nationalities": "France",
+            "birth_date": "1994-04-27",
+            "visas": "",
+            "phone": "",
+            "visited_countries": "China",
+            "vaccines": "",
+            "residence_country": "France"
+        }
+    },
+    {   "model": "ptc_api_back.trip",
+        "pk": 1,
+        "fields": {
+            "traveler_id": 1,
+            "departure_country": "France",
+            "departure_airport": "CDG",
+            "departure_date_time": "2017-12-06 18:00:00",
+            "arrival_country": "Vietnam",
+            "arrival_airport": "HAN",
+            "arrival_date_time": "2017-12-07 9:30:00"
+        }
+    },
+    {   "model": "ptc_api_back.segment",
+        "pk": 1,
+        "fields": {
+            "trip_id": 1,
+            "departure_country": "France",
+            "departure_airport": "CDG",
+            "departure_date_time": "2017-12-06 18:00:00",
+            "arrival_country": "United Arab Emirates",
+            "arrival_airport": "DXB",
+            "arrival_date_time": "2017-12-07 3:30:00",
+            "order": "1"
+        }
+    },
+    {   "model": "ptc_api_back.segment",
+        "pk": 2,
+        "fields": {
+            "trip_id": 1,
+            "departure_country": "United Arab Emirates",
+            "departure_airport": "DXB",
+            "departure_date_time": "2017-12-07 7:30:00",
+            "arrival_country": "Vietnam",
+            "arrival_airport": "HAN",
+            "arrival_date_time": "2017-12-07 9:30:00",
+            "order": "2"
+        }
+    }
+]

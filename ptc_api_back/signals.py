@@ -3,10 +3,19 @@ The signals enable the server to do some actions whenever an event occurs.
 Here, we catch the saving of an User instance, or a Trip instance.
 """
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from ptc_api_back.models import Profile, Trip
+
+@receiver(post_save, sender=User)
+def create_user_token(sender, instance, created, **kwargs):
+    """
+    When a User object is created, a linked Profile object is created automatically.
+    """
+    if created:
+        Token.objects.create(user=instance)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
