@@ -36,7 +36,7 @@ class TaskViewSet(viewsets.ModelViewSet):
     """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [IsOwnerOfTheTripOrReadOnly]
+    #permission_classes = [IsOwnerOfTheTripOrReadOnly]
 
     def perform_create(self, serializer):
         """
@@ -57,7 +57,7 @@ class SegmentViewSet(viewsets.ModelViewSet):
     """
     queryset = Segment.objects.all()
     serializer_class = SegmentSerializer
-    permission_classes = [IsOwnerOfTheTripOrReadOnly]
+    #permission_classes = [IsOwnerOfTheTripOrReadOnly]
 
 
     def perform_create(self, serializer):
@@ -80,7 +80,7 @@ class TripViewSet(viewsets.ModelViewSet):
     """
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
     """
     permission_classes has to be improved to disable anonymousUser to
     GET the route "generate_tasks"
@@ -109,7 +109,8 @@ class TripViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     def perform_create(self, serializer):
-        serializer.save(traveler=self.request.user)
+        #import pdb; pdb.set_trace()
+        serializer.save(traveler=User.objects.get(id=int(serializer.context['request'].data['traveler_id']))) #traveler=self.request.user)
 
 
 
@@ -120,10 +121,10 @@ class ProfileViewSet(viewsets.ModelViewSet):
     """
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(traveler=self.request.user)
+        serializer.save() #traveler=self.request.user)
 
 
 
@@ -133,7 +134,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsUserOrReadOnly]
+    #permission_classes = [IsUserOrReadOnly]
 
 class CountryListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = Country.objects.all()

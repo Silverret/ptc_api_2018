@@ -32,26 +32,6 @@ class SegmentSerializer(serializers.HyperlinkedModelSerializer):
         ]
 
 
-
-class TripSerializer(serializers.HyperlinkedModelSerializer):
-    traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
-    tasks = TaskSerializer(many=True, read_only=True)
-    segments = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='segment-detail')
-
-    class Meta:
-        model = Trip
-        fields = (
-            'id',
-            'traveler',
-            'departure_airport', 'departure_country', 'departure_date_time',
-            'arrival_airport', 'arrival_country', 'arrival_date_time',
-            'return_date_time',
-            'segments',
-            'tasks'
-        )
-
-
-
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
 
@@ -70,3 +50,21 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'id', 'username', 'profile', 'trips')
+
+
+class TripSerializer(serializers.HyperlinkedModelSerializer):
+    traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
+    tasks = TaskSerializer(many=True, read_only=True)
+    segments = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='segment-detail')
+
+    class Meta:
+        model = Trip
+        fields = (
+            'id',
+            'traveler',
+            'departure_airport', 'departure_country', 'departure_date_time',
+            'arrival_airport', 'arrival_country', 'arrival_date_time',
+            'return_date_time',
+            'segments',
+            'tasks'
+        )
