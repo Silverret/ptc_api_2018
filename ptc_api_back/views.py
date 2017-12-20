@@ -102,7 +102,6 @@ class TripViewSet(viewsets.ModelViewSet):
         return Trip.objects.filter(traveler=user)
 
     def perform_create(self, serializer):
-        #import pdb; pdb.set_trace()
         serializer.save(traveler=self.request.user)
 
     @detail_route(methods=['GET'])

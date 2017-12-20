@@ -37,19 +37,20 @@ class TaskFactory:
 
         tasks = []
         tasks.append(self.create_passport_task()),
-        tasks += self.create_visa_task(),
+        tasks.extend(self.create_visa_task()),
         tasks += [self.create_vaccines_task(),
             self.create_weather_task(),
             self.create_flight_needs_task(),
             self.create_banking_task(),
             self.create_insurance_task()]
 
-        tasks += self.create_trip_needs_tasks() #1-3 tasks
-        tasks += self.create_systematic_tasks() #3 tasks
+        tasks.extend(self.create_trip_needs_tasks()) #1-3 tasks
+        tasks.extend(self.create_systematic_tasks()) #3 tasks
 
         if self.trip.return_date_time is None or self.trip.return_date_time - self.trip.arrival_date_time > timedelta(days=14):
             tasks.append(self.create_long_travel_task())
 
+        import pdb; pdb.set_trace()
         for task in tasks:
             task.auto = True
 
