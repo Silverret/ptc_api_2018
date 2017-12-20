@@ -22,6 +22,6 @@ __Else :__
 - Open a shell in the django project root directory (which contains a file manage.py)
 - CMD : python manage.py makemigrations
 - CMD : python manage.py migrate
-- CMD : python manage.py loaddata dump.json
+- CMD : python manage.py loaddata initial_data.json
 - CMD : python manage.py runserver
 At this point, the server is running on localhost:8000. Try to make a request with your browser.
