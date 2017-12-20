@@ -1,8 +1,9 @@
 # Migrations #
 ##############
-#ptc_api_back/migrations
-#task_factory/migrations
-#db.sqlite3
+ptc_api_back/migrations/*
+!ptc_api_back/migrations/__init__.py
+task_factory/migrations/*
+!task_factory/migrations/__init__.py
 
 # Compiled source #
 ###################

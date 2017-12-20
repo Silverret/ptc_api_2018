@@ -2,13 +2,17 @@
 Viewsets of the API are defined here
 """
 from django.contrib.auth.models import User
+
 from rest_framework import permissions, viewsets, mixins
 from rest_framework.decorators import api_view, permission_classes, detail_route
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+from rest_framework.permissions import IsAuthenticated
+
 from ptc_api_back.models import Trip, Segment, Task, Profile
 from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer
-from ptc_api_back.permissions import IsOwnerOrReadOnly, IsOwnerOfTheTripOrReadOnly, IsUserOrReadOnly
+from ptc_api_back.permissions import IsUserOrIsAdminUser, IsTravelerOrIsAdminUser, IsTripTravelerOrAdminUser
+
 from task_factory.models import Country
 from task_factory.serializers import CountrySerializer
 
@@ -28,7 +32,6 @@ def api_root(request, format=None):
     })
 
 
-
 class TaskViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
@@ -36,29 +39,13 @@ class TaskViewSet(viewsets.ModelViewSet):
     """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [IsOwnerOfTheTripOrReadOnly]
+    permission_classes = [IsTripTravelerOrAdminUser]
 
-    def perform_create(self, serializer):
-        """
-        We try to get the trip specified in the initial data
-        """
-        try:
-            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'])
-        except Trip.DoesNotExist:
-            cor_trip = Trip.objects.get(id=0)
-
-        serializer.save(trip=cor_trip)
-
-
-class SegmentViewSet(viewsets.ModelViewSet):
-    """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
-    """
-    queryset = Segment.objects.all()
-    serializer_class = SegmentSerializer
-    permission_classes = [IsOwnerOfTheTripOrReadOnly]
-
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Task.objects.all()
+        return Task.objects.filter(trip__in=Trip.objects.filter(traveler=user))
 
     def perform_create(self, serializer):
         """
@@ -72,6 +59,32 @@ class SegmentViewSet(viewsets.ModelViewSet):
         serializer.save(trip=cor_trip)
 
 
+class SegmentViewSet(viewsets.ModelViewSet):
+    """
+    This viewset automatically provides `list`, `create`, `retrieve`,
+    `update` and `destroy` actions.
+    """
+    queryset = Segment.objects.all()
+    serializer_class = SegmentSerializer
+    permission_classes = [IsTripTravelerOrAdminUser]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Segment.objects.all()
+        return Segment.objects.filter(trip__in=Trip.objects.filter(traveler=user))
+
+    def perform_create(self, serializer):
+        """
+        We try to get the trip specified in the initial data
+        """
+        try:
+            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'].split("/")[-2])
+        except Trip.DoesNotExist:
+            cor_trip = Trip.objects.get(id=0)
+
+        serializer.save(trip=cor_trip)
+
 
 class TripViewSet(viewsets.ModelViewSet):
     """
@@ -80,11 +93,17 @@ class TripViewSet(viewsets.ModelViewSet):
     """
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    permission_classes = [IsOwnerOrReadOnly]
-    """
-    permission_classes has to be improved to disable anonymousUser to
-    GET the route "generate_tasks"
-    """
+    permission_classes = [IsTravelerOrIsAdminUser]
+    
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Trip.objects.all()
+        return Trip.objects.filter(traveler=user)
+
+    def perform_create(self, serializer):
+        #import pdb; pdb.set_trace()
+        serializer.save(traveler=self.request.user)
 
     @detail_route(methods=['GET'])
     def generate_tasks(self, request, *args, **kwargs):
@@ -108,11 +127,6 @@ class TripViewSet(viewsets.ModelViewSet):
         serializer = TaskSerializer(tasks, many=True, context={'request': request})
         return Response(serializer.data)
 
-    def perform_create(self, serializer):
-        #import pdb; pdb.set_trace()
-        serializer.save(traveler=self.request.user)
-
-
 
 class ProfileViewSet(viewsets.ModelViewSet):
     """
@@ -121,11 +135,16 @@ class ProfileViewSet(viewsets.ModelViewSet):
     """
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsTravelerOrIsAdminUser]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return Profile.objects.all()
+        return Profile.objects.filter(traveler=user)
 
     def perform_create(self, serializer):
         serializer.save(traveler=self.request.user)
-
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
@@ -134,9 +153,17 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsUserOrReadOnly]
+    permission_classes = [IsUserOrIsAdminUser]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_staff:
+            return User.objects.all()
+        return User.objects.filter(id=user.id)
+
 
 class CountryListViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
+    permission_classes = [IsAuthenticated]
     

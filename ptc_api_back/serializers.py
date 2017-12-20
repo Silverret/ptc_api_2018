@@ -6,24 +6,21 @@ from rest_framework.validators import UniqueTogetherValidator
 
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
+    trip = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Task
-        fields = ('id', 'trip', 'title', 'deadline', 'completed', 'comments','auto')
+        fields = '__all__'
+        read_only = ('id', 'auto')
 
 
 
 class SegmentSerializer(serializers.HyperlinkedModelSerializer):
+    trip = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Segment
-        fields = (
-            'url', 'id',
-            'trip',
-            'departure_airport', 'departure_country', 'departure_date_time',
-            'arrival_airport', 'arrival_country', 'arrival_date_time',
-            'order'
-        )
+        fields = '__all__'
         validators = [
             UniqueTogetherValidator(
                 queryset=Segment.objects.all(),
@@ -37,16 +34,13 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Profile
-        fields = (
-            'url', 'id','traveler', 'residence_country', 'nationalities', 'birth_date', 'visas', 'address', 'phone',
-            'visited_countries', 'vaccines')
-
+        fields = '__all__'
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     profile = serializers.HyperlinkedRelatedField(many=False, view_name='profile-detail', read_only=True)
     trips = serializers.HyperlinkedRelatedField(many=True, view_name='trip-detail', read_only=True)
-        
+
     class Meta:
         model = User
         fields = ('url', 'id', 'username', 'profile', 'trips')
@@ -54,7 +48,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
     traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
-    tasks = TaskSerializer(many=True, read_only=True)
     segments = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='segment-detail')
 
     class Meta:
@@ -65,6 +58,5 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
             'departure_airport', 'departure_country', 'departure_date_time',
             'arrival_airport', 'arrival_country', 'arrival_date_time',
             'return_date_time',
-            'segments',
-            'tasks'
+            'segments'
         )

@@ -12,14 +12,15 @@ class Profile(models.Model):
     """
     traveler = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    nationalities = models.CharField(max_length=255, blank=True)  # Country names please !
+    nationalities = models.CharField(max_length=255)  # Country names please !
+    residence_country = models.CharField(max_length=255)
     birth_date = models.DateField(null=True, blank=True)
-    visas = models.CharField(max_length=255, blank=True)
-    address = models.CharField(max_length=255, blank=True, default="")
-    phone = models.CharField(max_length=20, blank=True)
-    visited_countries = models.CharField(max_length=255, blank=True)
-    vaccines = models.CharField(max_length=255, blank=True)
-    residence_country = models.CharField(max_length=255, blank=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    visited_countries = models.CharField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.traveler.username}'
 
 
 
@@ -31,15 +32,16 @@ class Trip(models.Model):
     traveler = models.ForeignKey(User, related_name='trips', on_delete=models.CASCADE)
 
     departure_country = models.CharField(max_length=255)
-    departure_airport = models.CharField(max_length=255)
+    departure_airport = models.CharField(max_length=3)
     departure_date_time = models.DateTimeField()
     arrival_country = models.CharField(max_length=255)
-    arrival_airport = models.CharField(max_length=255)
+    arrival_airport = models.CharField(max_length=3)
     arrival_date_time = models.DateTimeField()
     return_date_time = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return "Trip from " + self.departure_airport + " to " + self.arrival_airport
+        return  f'from {self.departure_airport} to {self.arrival_airport}' +\
+                f'(Traveler: {self.traveler.username})'
 
     def generate_tasks(self):
         """
@@ -71,23 +73,24 @@ class Segment(models.Model):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='segments')
 
     departure_country = models.CharField(max_length=255)
-    departure_airport = models.CharField(max_length=255)
+    departure_airport = models.CharField(max_length=3)
     departure_date_time = models.DateTimeField()
     arrival_country = models.CharField(max_length=255)
-    arrival_airport = models.CharField(max_length=255)
+    arrival_airport = models.CharField(max_length=3)
     arrival_date_time = models.DateTimeField()
     order = models.IntegerField()
 
 
     def __str__(self):
-        return "Segment of trip " + str(self.trip.id) +\
-               " from " + self.departure_airport + " to " + self.arrival_airport
+        return  f'{self.order} of Trip {self.trip.id} ' +\
+                f'from {self.departure_airport} to {self.arrival_airport}'
 
     class Meta:
         """
         The segments are ordered by 'order' field.
         """
         ordering = ['order']
+        unique_together = ['order', 'trip']
 
 
 
@@ -98,10 +101,10 @@ class Task(models.Model):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='tasks')
 
     title = models.CharField(max_length=255)
-    deadline = models.DateField(auto_now_add=False, null=True, blank=True)
+    deadline = models.DateField(null=True, blank=True)
     completed = models.BooleanField(default=False)
     comments = models.TextField(null=True, blank=True)
     auto = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.title
+        return f'{self.title} (Trip {self.trip.id}, auto = {self.auto})'

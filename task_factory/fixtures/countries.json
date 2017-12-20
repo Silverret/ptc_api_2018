@@ -11,7 +11,7 @@
         "model": "task_factory.Country",
         "pk": 2,
         "fields": {
-            "name": "\u00c3\u2026land Islands",
+            "name": "Aland Islands",
             "code": "AX"
         }
     },
@@ -819,7 +819,7 @@
         "model": "task_factory.Country",
         "pk": 103,
         "fields": {
-            "name": "Iran, Islamic Republic Of",
+            "name": "Iran",
             "code": "IR"
         }
     },
@@ -923,7 +923,7 @@
         "model": "task_factory.Country",
         "pk": 116,
         "fields": {
-            "name": "Korea, Democratic People'S Republic of",
+            "name": "North Korea",
             "code": "KP"
         }
     },
@@ -931,7 +931,7 @@
         "model": "task_factory.Country",
         "pk": 117,
         "fields": {
-            "name": "Korea, Republic of",
+            "name": "South Korea",
             "code": "KR"
         }
     },
@@ -955,7 +955,7 @@
         "model": "task_factory.Country",
         "pk": 120,
         "fields": {
-            "name": "Lao People'S Democratic Republic",
+            "name": "Laos",
             "code": "LA"
         }
     },
@@ -1035,7 +1035,7 @@
         "model": "task_factory.Country",
         "pk": 130,
         "fields": {
-            "name": "Macedonia, The Former Yugoslav Republic of",
+            "name": "Macedonia",
             "code": "MK"
         }
     },
@@ -1139,7 +1139,7 @@
         "model": "task_factory.Country",
         "pk": 143,
         "fields": {
-            "name": "Micronesia, Federated States of",
+            "name": "Micronesia",
             "code": "FM"
         }
     },
@@ -1339,7 +1339,7 @@
         "model": "task_factory.Country",
         "pk": 168,
         "fields": {
-            "name": "Palestinian Territory, Occupied",
+            "name": "Palestinian Territory",
             "code": "PS"
         }
     },
@@ -1691,7 +1691,7 @@
         "model": "task_factory.Country",
         "pk": 212,
         "fields": {
-            "name": "Taiwan, Province of China",
+            "name": "Taiwan",
             "code": "TW"
         }
     },
@@ -1707,7 +1707,7 @@
         "model": "task_factory.Country",
         "pk": 214,
         "fields": {
-            "name": "Tanzania, United Republic of",
+            "name": "Tanzania",
             "code": "TZ"
         }
     },

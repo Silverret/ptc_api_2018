@@ -14,3 +14,15 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
+
+class CountryUnion(models.Model):
+    """
+    A Union of Country has specific visa policies
+    """
+    name = models.CharField(max_length=63)
+    t_visa_between_members = models.BooleanField()
+    common_visa = models.BooleanField()
+    countries = models.ManyToManyField(Country)
+
+    def __str__(self):
+        return self.name
