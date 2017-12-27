@@ -50,7 +50,6 @@ class TaskFactory:
         if self.trip.return_date_time is None or self.trip.return_date_time - self.trip.arrival_date_time > timedelta(days=14):
             tasks.append(self.create_long_travel_task())
 
-        import pdb; pdb.set_trace()
         for task in tasks:
             task.auto = True
 
