@@ -16,7 +16,7 @@ How to run this Django Server ?
 
 
 __If you already have an older version :__
-- Delete db.sqlite3, and every files in migrations folder except __init__.py
+- Delete db.sqlite3, and every files in migrations files except __init__.py
 
 __Else :__
 - Open a shell in the django project root directory (which contains a file manage.py)

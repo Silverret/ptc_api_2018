@@ -3,7 +3,7 @@ Viewsets of the API are defined here
 """
 from django.contrib.auth.models import User
 
-from rest_framework import permissions, viewsets, mixins
+from rest_framework import permissions, viewsets
 from rest_framework.decorators import api_view, permission_classes, detail_route
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -94,7 +94,7 @@ class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
     permission_classes = [IsTravelerOrIsAdminUser]
-    
+
     def get_queryset(self):
         user = self.request.user
         if user.is_staff:
@@ -146,7 +146,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
         serializer.save(traveler=self.request.user)
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """

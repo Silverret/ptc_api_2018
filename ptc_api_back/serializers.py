@@ -1,7 +1,8 @@
-from ptc_api_back.models import Trip, Segment, Task, Profile
-from django.contrib.auth.models import User
 from rest_framework import serializers
-from rest_framework.validators import UniqueTogetherValidator
+from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
+from django.contrib.auth.models import User
+
+from ptc_api_back.models import Trip, Segment, Task, Profile
 
 
 
@@ -30,7 +31,8 @@ class SegmentSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
+    traveler = serializers.HyperlinkedRelatedField(
+        many=False, view_name='user-detail', read_only=True)
 
     class Meta:
         model = Profile
@@ -38,17 +40,29 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    profile = serializers.HyperlinkedRelatedField(many=False, view_name='profile-detail', read_only=True)
-    trips = serializers.HyperlinkedRelatedField(many=True, view_name='trip-detail', read_only=True)
+    profile = serializers.HyperlinkedRelatedField(
+        many=False, view_name='profile-detail', read_only=True)
+    trips = serializers.HyperlinkedRelatedField(
+        many=True, view_name='trip-detail', read_only=True)
+    username = serializers.CharField(
+        validators=[UniqueValidator(queryset=User.objects.all())])
+    password = serializers.CharField(min_length=8, write_only=True)
+
+    def create(self, validated_data):
+        user = User.objects.create_user(
+            validated_data['username'], password=validated_data['password'])
+        return user
 
     class Meta:
         model = User
-        fields = ('url', 'id', 'username', 'profile', 'trips')
+        fields = ('url', 'id', 'username', 'password', 'profile', 'trips')
 
 
 class TripSerializer(serializers.HyperlinkedModelSerializer):
-    traveler = serializers.HyperlinkedRelatedField(many=False, view_name='user-detail', read_only=True)
-    segments = serializers.HyperlinkedRelatedField(many=True, read_only=True, view_name='segment-detail')
+    traveler = serializers.HyperlinkedRelatedField(
+        many=False, view_name='user-detail', read_only=True)
+    segments = serializers.HyperlinkedRelatedField(
+        many=True, read_only=True, view_name='segment-detail')
 
     class Meta:
         model = Trip

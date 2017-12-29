@@ -1,1982 +1,2432 @@
 [
     {
-        "model": "auth.user",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$36000$24ICvyYDtkZ9$6Qbh4ShpefUfZjdtGa7GUp9yOw677HIwc5UF1oTycFs=",
-            "last_login": null,
-            "is_superuser": false,
-            "username": "cedric",
-            "first_name": "",
-            "last_name": "",
-            "email": "",
-            "is_staff": false,
-            "is_active": true,
-            "date_joined": "2017-12-06T09:27:26.322Z",
-            "groups": [],
-            "user_permissions": []
-        }
-    },
-    {
-        "model": "auth.user",
-        "pk": 18,
-        "fields": {
-            "password": "pbkdf2_sha256$36000$qI5T1jxTigOK$NYCzrU1/PT5Zw7gWk0HsqirMI/scsGYqMz0k8EdZkLM=",
-            "last_login": "2017-12-13T09:58:20.043Z",
-            "is_superuser": true,
-            "username": "admin",
-            "first_name": "",
-            "last_name": "",
-            "email": "admin@admin.com",
-            "is_staff": true,
-            "is_active": true,
-            "date_joined": "2017-12-13T09:57:53.104Z",
-            "groups": [],
-            "user_permissions": []
-        }
-    },
-    {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 1,
         "fields": {
             "name": "Afghanistan",
-            "code": "AF"
+            "code": "AF",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 2,
         "fields": {
             "name": "Aland Islands",
-            "code": "AX"
+            "code": "AX",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 3,
         "fields": {
             "name": "Albania",
-            "code": "AL"
+            "code": "AL",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 4,
         "fields": {
             "name": "Algeria",
-            "code": "DZ"
+            "code": "DZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 5,
         "fields": {
             "name": "American Samoa",
-            "code": "AS"
+            "code": "AS",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 6,
         "fields": {
             "name": "AndorrA",
-            "code": "AD"
+            "code": "AD",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 7,
         "fields": {
             "name": "Angola",
-            "code": "AO"
+            "code": "AO",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 8,
         "fields": {
             "name": "Anguilla",
-            "code": "AI"
+            "code": "AI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 9,
         "fields": {
             "name": "Antarctica",
-            "code": "AQ"
+            "code": "AQ",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 10,
         "fields": {
             "name": "Antigua and Barbuda",
-            "code": "AG"
+            "code": "AG",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 11,
         "fields": {
             "name": "Argentina",
-            "code": "AR"
+            "code": "AR",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 12,
         "fields": {
             "name": "Armenia",
-            "code": "AM"
+            "code": "AM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 13,
         "fields": {
             "name": "Aruba",
-            "code": "AW"
+            "code": "AW",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 14,
         "fields": {
             "name": "Australia",
-            "code": "AU"
+            "code": "AU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 15,
         "fields": {
             "name": "Austria",
-            "code": "AT"
+            "code": "AT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 16,
         "fields": {
             "name": "Azerbaijan",
-            "code": "AZ"
+            "code": "AZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 17,
         "fields": {
             "name": "Bahamas",
-            "code": "BS"
+            "code": "BS",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 18,
         "fields": {
             "name": "Bahrain",
-            "code": "BH"
+            "code": "BH",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 19,
         "fields": {
             "name": "Bangladesh",
-            "code": "BD"
+            "code": "BD",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 20,
         "fields": {
             "name": "Barbados",
-            "code": "BB"
+            "code": "BB",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 21,
         "fields": {
             "name": "Belarus",
-            "code": "BY"
+            "code": "BY",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 22,
         "fields": {
             "name": "Belgium",
-            "code": "BE"
+            "code": "BE",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 23,
         "fields": {
             "name": "Belize",
-            "code": "BZ"
+            "code": "BZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 24,
         "fields": {
             "name": "Benin",
-            "code": "BJ"
+            "code": "BJ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 25,
         "fields": {
             "name": "Bermuda",
-            "code": "BM"
+            "code": "BM",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 26,
         "fields": {
             "name": "Bhutan",
-            "code": "BT"
+            "code": "BT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 27,
         "fields": {
             "name": "Bolivia",
-            "code": "BO"
+            "code": "BO",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 28,
         "fields": {
             "name": "Bosnia and Herzegovina",
-            "code": "BA"
+            "code": "BA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 29,
         "fields": {
             "name": "Botswana",
-            "code": "BW"
+            "code": "BW",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 30,
         "fields": {
             "name": "Bouvet Island",
-            "code": "BV"
+            "code": "BV",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 31,
         "fields": {
             "name": "Brazil",
-            "code": "BR"
+            "code": "BR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 32,
         "fields": {
             "name": "British Indian Ocean Territory",
-            "code": "IO"
+            "code": "IO",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 33,
         "fields": {
             "name": "Brunei Darussalam",
-            "code": "BN"
+            "code": "BN",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 34,
         "fields": {
             "name": "Bulgaria",
-            "code": "BG"
+            "code": "BG",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 35,
         "fields": {
             "name": "Burkina Faso",
-            "code": "BF"
+            "code": "BF",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 36,
         "fields": {
             "name": "Burundi",
-            "code": "BI"
+            "code": "BI",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 37,
         "fields": {
             "name": "Cambodia",
-            "code": "KH"
+            "code": "KH",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 38,
         "fields": {
             "name": "Cameroon",
-            "code": "CM"
+            "code": "CM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 39,
         "fields": {
             "name": "Canada",
-            "code": "CA"
+            "code": "CA",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 40,
         "fields": {
             "name": "Cape Verde",
-            "code": "CV"
+            "code": "CV",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 41,
         "fields": {
             "name": "Cayman Islands",
-            "code": "KY"
+            "code": "KY",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 42,
         "fields": {
             "name": "Central African Republic",
-            "code": "CF"
+            "code": "CF",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 43,
         "fields": {
             "name": "Chad",
-            "code": "TD"
+            "code": "TD",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 44,
         "fields": {
             "name": "Chile",
-            "code": "CL"
+            "code": "CL",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 45,
         "fields": {
             "name": "China",
-            "code": "CN"
+            "code": "CN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 46,
         "fields": {
             "name": "Christmas Island",
-            "code": "CX"
+            "code": "CX",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 47,
         "fields": {
             "name": "Cocos (Keeling) Islands",
-            "code": "CC"
+            "code": "CC",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 48,
         "fields": {
             "name": "Colombia",
-            "code": "CO"
+            "code": "CO",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 49,
         "fields": {
             "name": "Comoros",
-            "code": "KM"
+            "code": "KM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 50,
         "fields": {
             "name": "Congo",
-            "code": "CG"
+            "code": "CG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 51,
         "fields": {
             "name": "Congo, The Democratic Republic of the",
-            "code": "CD"
+            "code": "CD",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 52,
         "fields": {
             "name": "Cook Islands",
-            "code": "CK"
+            "code": "CK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 53,
         "fields": {
             "name": "Costa Rica",
-            "code": "CR"
+            "code": "CR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 54,
         "fields": {
             "name": "Cote D'Ivoire",
-            "code": "CI"
+            "code": "CI",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 55,
         "fields": {
             "name": "Croatia",
-            "code": "HR"
+            "code": "HR",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 56,
         "fields": {
             "name": "Cuba",
-            "code": "CU"
+            "code": "CU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 57,
         "fields": {
             "name": "Cyprus",
-            "code": "CY"
+            "code": "CY",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 58,
         "fields": {
             "name": "Czech Republic",
-            "code": "CZ"
+            "code": "CZ",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 59,
         "fields": {
             "name": "Denmark",
-            "code": "DK"
+            "code": "DK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 60,
         "fields": {
             "name": "Djibouti",
-            "code": "DJ"
+            "code": "DJ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 61,
         "fields": {
             "name": "Dominica",
-            "code": "DM"
+            "code": "DM",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 62,
         "fields": {
             "name": "Dominican Republic",
-            "code": "DO"
+            "code": "DO",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 63,
         "fields": {
             "name": "Ecuador",
-            "code": "EC"
+            "code": "EC",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 64,
         "fields": {
             "name": "Egypt",
-            "code": "EG"
+            "code": "EG",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 65,
         "fields": {
             "name": "El Salvador",
-            "code": "SV"
+            "code": "SV",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 66,
         "fields": {
             "name": "Equatorial Guinea",
-            "code": "GQ"
+            "code": "GQ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 67,
         "fields": {
             "name": "Eritrea",
-            "code": "ER"
+            "code": "ER",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 68,
         "fields": {
             "name": "Estonia",
-            "code": "EE"
+            "code": "EE",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 69,
         "fields": {
             "name": "Ethiopia",
-            "code": "ET"
+            "code": "ET",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 70,
         "fields": {
             "name": "Falkland Islands (Malvinas)",
-            "code": "FK"
+            "code": "FK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 71,
         "fields": {
             "name": "Faroe Islands",
-            "code": "FO"
+            "code": "FO",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 72,
         "fields": {
             "name": "Fiji",
-            "code": "FJ"
+            "code": "FJ",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 73,
         "fields": {
             "name": "Finland",
-            "code": "FI"
+            "code": "FI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 74,
         "fields": {
             "name": "France",
-            "code": "FR"
+            "code": "FR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 75,
         "fields": {
             "name": "French Guiana",
-            "code": "GF"
+            "code": "GF",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 76,
         "fields": {
             "name": "French Polynesia",
-            "code": "PF"
+            "code": "PF",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 77,
         "fields": {
             "name": "French Southern Territories",
-            "code": "TF"
+            "code": "TF",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 78,
         "fields": {
             "name": "Gabon",
-            "code": "GA"
+            "code": "GA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 79,
         "fields": {
             "name": "Gambia",
-            "code": "GM"
+            "code": "GM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 80,
         "fields": {
             "name": "Georgia",
-            "code": "GE"
+            "code": "GE",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 81,
         "fields": {
             "name": "Germany",
-            "code": "DE"
+            "code": "DE",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 82,
         "fields": {
             "name": "Ghana",
-            "code": "GH"
+            "code": "GH",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 83,
         "fields": {
             "name": "Gibraltar",
-            "code": "GI"
+            "code": "GI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 84,
         "fields": {
             "name": "Greece",
-            "code": "GR"
+            "code": "GR",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 85,
         "fields": {
             "name": "Greenland",
-            "code": "GL"
+            "code": "GL",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 86,
         "fields": {
             "name": "Grenada",
-            "code": "GD"
+            "code": "GD",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 87,
         "fields": {
             "name": "Guadeloupe",
-            "code": "GP"
+            "code": "GP",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 88,
         "fields": {
             "name": "Guam",
-            "code": "GU"
+            "code": "GU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 89,
         "fields": {
             "name": "Guatemala",
-            "code": "GT"
+            "code": "GT",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 90,
         "fields": {
             "name": "Guernsey",
-            "code": "GG"
+            "code": "GG",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 91,
         "fields": {
             "name": "Guinea",
-            "code": "GN"
+            "code": "GN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 92,
         "fields": {
             "name": "Guinea-Bissau",
-            "code": "GW"
+            "code": "GW",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 93,
         "fields": {
             "name": "Guyana",
-            "code": "GY"
+            "code": "GY",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 94,
         "fields": {
             "name": "Haiti",
-            "code": "HT"
+            "code": "HT",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 95,
         "fields": {
             "name": "Heard Island and Mcdonald Islands",
-            "code": "HM"
+            "code": "HM",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 96,
         "fields": {
             "name": "Holy See (Vatican City State)",
-            "code": "VA"
+            "code": "VA",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 97,
         "fields": {
             "name": "Honduras",
-            "code": "HN"
+            "code": "HN",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 98,
         "fields": {
             "name": "Hong Kong",
-            "code": "HK"
+            "code": "HK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 99,
         "fields": {
             "name": "Hungary",
-            "code": "HU"
+            "code": "HU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 100,
         "fields": {
             "name": "Iceland",
-            "code": "IS"
+            "code": "IS",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 101,
         "fields": {
             "name": "India",
-            "code": "IN"
+            "code": "IN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 102,
         "fields": {
             "name": "Indonesia",
-            "code": "ID"
+            "code": "ID",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 103,
         "fields": {
             "name": "Iran",
-            "code": "IR"
+            "code": "IR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 104,
         "fields": {
             "name": "Iraq",
-            "code": "IQ"
+            "code": "IQ",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 105,
         "fields": {
             "name": "Ireland",
-            "code": "IE"
+            "code": "IE",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 106,
         "fields": {
             "name": "Isle of Man",
-            "code": "IM"
+            "code": "IM",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 107,
         "fields": {
             "name": "Israel",
-            "code": "IL"
+            "code": "IL",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 108,
         "fields": {
             "name": "Italy",
-            "code": "IT"
+            "code": "IT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 109,
         "fields": {
             "name": "Jamaica",
-            "code": "JM"
+            "code": "JM",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 110,
         "fields": {
             "name": "Japan",
-            "code": "JP"
+            "code": "JP",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 111,
         "fields": {
             "name": "Jersey",
-            "code": "JE"
+            "code": "JE",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 112,
         "fields": {
             "name": "Jordan",
-            "code": "JO"
+            "code": "JO",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 113,
         "fields": {
             "name": "Kazakhstan",
-            "code": "KZ"
+            "code": "KZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 114,
         "fields": {
             "name": "Kenya",
-            "code": "KE"
+            "code": "KE",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 115,
         "fields": {
             "name": "Kiribati",
-            "code": "KI"
+            "code": "KI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 116,
         "fields": {
             "name": "North Korea",
-            "code": "KP"
+            "code": "KP",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 117,
         "fields": {
             "name": "South Korea",
-            "code": "KR"
+            "code": "KR",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 118,
         "fields": {
             "name": "Kuwait",
-            "code": "KW"
+            "code": "KW",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 119,
         "fields": {
             "name": "Kyrgyzstan",
-            "code": "KG"
+            "code": "KG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 120,
         "fields": {
             "name": "Laos",
-            "code": "LA"
+            "code": "LA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 121,
         "fields": {
             "name": "Latvia",
-            "code": "LV"
+            "code": "LV",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 122,
         "fields": {
             "name": "Lebanon",
-            "code": "LB"
+            "code": "LB",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 123,
         "fields": {
             "name": "Lesotho",
-            "code": "LS"
+            "code": "LS",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 124,
         "fields": {
             "name": "Liberia",
-            "code": "LR"
+            "code": "LR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 125,
         "fields": {
             "name": "Libyan Arab Jamahiriya",
-            "code": "LY"
+            "code": "LY",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 126,
         "fields": {
             "name": "Liechtenstein",
-            "code": "LI"
+            "code": "LI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 127,
         "fields": {
             "name": "Lithuania",
-            "code": "LT"
+            "code": "LT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 128,
         "fields": {
             "name": "Luxembourg",
-            "code": "LU"
+            "code": "LU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 129,
         "fields": {
             "name": "Macao",
-            "code": "MO"
+            "code": "MO",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 130,
         "fields": {
             "name": "Macedonia",
-            "code": "MK"
+            "code": "MK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 131,
         "fields": {
             "name": "Madagascar",
-            "code": "MG"
+            "code": "MG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 132,
         "fields": {
             "name": "Malawi",
-            "code": "MW"
+            "code": "MW",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 133,
         "fields": {
             "name": "Malaysia",
-            "code": "MY"
+            "code": "MY",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 134,
         "fields": {
             "name": "Maldives",
-            "code": "MV"
+            "code": "MV",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 135,
         "fields": {
             "name": "Mali",
-            "code": "ML"
+            "code": "ML",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 136,
         "fields": {
             "name": "Malta",
-            "code": "MT"
+            "code": "MT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 137,
         "fields": {
             "name": "Marshall Islands",
-            "code": "MH"
+            "code": "MH",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 138,
         "fields": {
             "name": "Martinique",
-            "code": "MQ"
+            "code": "MQ",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 139,
         "fields": {
             "name": "Mauritania",
-            "code": "MR"
+            "code": "MR",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 140,
         "fields": {
             "name": "Mauritius",
-            "code": "MU"
+            "code": "MU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 141,
         "fields": {
             "name": "Mayotte",
-            "code": "YT"
+            "code": "YT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 142,
         "fields": {
             "name": "Mexico",
-            "code": "MX"
+            "code": "MX",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 143,
         "fields": {
             "name": "Micronesia",
-            "code": "FM"
+            "code": "FM",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 144,
         "fields": {
             "name": "Moldova, Republic of",
-            "code": "MD"
+            "code": "MD",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 145,
         "fields": {
             "name": "Monaco",
-            "code": "MC"
+            "code": "MC",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 146,
         "fields": {
             "name": "Mongolia",
-            "code": "MN"
+            "code": "MN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 147,
         "fields": {
             "name": "Montserrat",
-            "code": "MS"
+            "code": "MS",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 148,
         "fields": {
             "name": "Morocco",
-            "code": "MA"
+            "code": "MA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 149,
         "fields": {
             "name": "Mozambique",
-            "code": "MZ"
+            "code": "MZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 150,
         "fields": {
             "name": "Myanmar",
-            "code": "MM"
+            "code": "MM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 151,
         "fields": {
             "name": "Namibia",
-            "code": "NA"
+            "code": "NA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 152,
         "fields": {
             "name": "Nauru",
-            "code": "NR"
+            "code": "NR",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 153,
         "fields": {
             "name": "Nepal",
-            "code": "NP"
+            "code": "NP",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 154,
         "fields": {
             "name": "Netherlands",
-            "code": "NL"
+            "code": "NL",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 155,
         "fields": {
             "name": "Netherlands Antilles",
-            "code": "AN"
+            "code": "AN",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 156,
         "fields": {
             "name": "New Caledonia",
-            "code": "NC"
+            "code": "NC",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 157,
         "fields": {
             "name": "New Zealand",
-            "code": "NZ"
+            "code": "NZ",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 158,
         "fields": {
             "name": "Nicaragua",
-            "code": "NI"
+            "code": "NI",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 159,
         "fields": {
             "name": "Niger",
-            "code": "NE"
+            "code": "NE",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 160,
         "fields": {
             "name": "Nigeria",
-            "code": "NG"
+            "code": "NG",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 161,
         "fields": {
             "name": "Niue",
-            "code": "NU"
+            "code": "NU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 162,
         "fields": {
             "name": "Norfolk Island",
-            "code": "NF"
+            "code": "NF",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 163,
         "fields": {
             "name": "Northern Mariana Islands",
-            "code": "MP"
+            "code": "MP",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 164,
         "fields": {
             "name": "Norway",
-            "code": "NO"
+            "code": "NO",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 165,
         "fields": {
             "name": "Oman",
-            "code": "OM"
+            "code": "OM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 166,
         "fields": {
             "name": "Pakistan",
-            "code": "PK"
+            "code": "PK",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 167,
         "fields": {
             "name": "Palau",
-            "code": "PW"
+            "code": "PW",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 168,
         "fields": {
             "name": "Palestinian Territory",
-            "code": "PS"
+            "code": "PS",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 169,
         "fields": {
             "name": "Panama",
-            "code": "PA"
+            "code": "PA",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 170,
         "fields": {
             "name": "Papua New Guinea",
-            "code": "PG"
+            "code": "PG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 171,
         "fields": {
             "name": "Paraguay",
-            "code": "PY"
+            "code": "PY",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 172,
         "fields": {
             "name": "Peru",
-            "code": "PE"
+            "code": "PE",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 173,
         "fields": {
             "name": "Philippines",
-            "code": "PH"
+            "code": "PH",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 174,
         "fields": {
             "name": "Pitcairn",
-            "code": "PN"
+            "code": "PN",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 175,
         "fields": {
             "name": "Poland",
-            "code": "PL"
+            "code": "PL",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 176,
         "fields": {
             "name": "Portugal",
-            "code": "PT"
+            "code": "PT",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 177,
         "fields": {
             "name": "Puerto Rico",
-            "code": "PR"
+            "code": "PR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 178,
         "fields": {
             "name": "Qatar",
-            "code": "QA"
+            "code": "QA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 179,
         "fields": {
             "name": "Reunion",
-            "code": "RE"
+            "code": "RE",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 180,
         "fields": {
             "name": "Romania",
-            "code": "RO"
+            "code": "RO",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 181,
         "fields": {
             "name": "Russian Federation",
-            "code": "RU"
+            "code": "RU",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 182,
         "fields": {
             "name": "RWANDA",
-            "code": "RW"
+            "code": "RW",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 183,
         "fields": {
             "name": "Saint Helena",
-            "code": "SH"
+            "code": "SH",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 184,
         "fields": {
             "name": "Saint Kitts and Nevis",
-            "code": "KN"
+            "code": "KN",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 185,
         "fields": {
             "name": "Saint Lucia",
-            "code": "LC"
+            "code": "LC",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 186,
         "fields": {
             "name": "Saint Pierre and Miquelon",
-            "code": "PM"
+            "code": "PM",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 187,
         "fields": {
             "name": "Saint Vincent and the Grenadines",
-            "code": "VC"
+            "code": "VC",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 188,
         "fields": {
             "name": "Samoa",
-            "code": "WS"
+            "code": "WS",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 189,
         "fields": {
             "name": "San Marino",
-            "code": "SM"
+            "code": "SM",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 190,
         "fields": {
             "name": "Sao Tome and Principe",
-            "code": "ST"
+            "code": "ST",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 191,
         "fields": {
             "name": "Saudi Arabia",
-            "code": "SA"
+            "code": "SA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 192,
         "fields": {
             "name": "Senegal",
-            "code": "SN"
+            "code": "SN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 193,
         "fields": {
             "name": "Serbia and Montenegro",
-            "code": "CS"
+            "code": "CS",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 194,
         "fields": {
             "name": "Seychelles",
-            "code": "SC"
+            "code": "SC",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 195,
         "fields": {
             "name": "Sierra Leone",
-            "code": "SL"
+            "code": "SL",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 196,
         "fields": {
             "name": "Singapore",
-            "code": "SG"
+            "code": "SG",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 197,
         "fields": {
             "name": "Slovakia",
-            "code": "SK"
+            "code": "SK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 198,
         "fields": {
             "name": "Slovenia",
-            "code": "SI"
+            "code": "SI",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 199,
         "fields": {
             "name": "Solomon Islands",
-            "code": "SB"
+            "code": "SB",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 200,
         "fields": {
             "name": "Somalia",
-            "code": "SO"
+            "code": "SO",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 201,
         "fields": {
             "name": "South Africa",
-            "code": "ZA"
+            "code": "ZA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 202,
         "fields": {
             "name": "South Georgia and the South Sandwich Islands",
-            "code": "GS"
+            "code": "GS",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 203,
         "fields": {
             "name": "Spain",
-            "code": "ES"
+            "code": "ES",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 204,
         "fields": {
             "name": "Sri Lanka",
-            "code": "LK"
+            "code": "LK",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 205,
         "fields": {
             "name": "Sudan",
-            "code": "SD"
+            "code": "SD",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 206,
         "fields": {
             "name": "Suriname",
-            "code": "SR"
+            "code": "SR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 207,
         "fields": {
             "name": "Svalbard and Jan Mayen",
-            "code": "SJ"
+            "code": "SJ",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 208,
         "fields": {
             "name": "Swaziland",
-            "code": "SZ"
+            "code": "SZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 209,
         "fields": {
             "name": "Sweden",
-            "code": "SE"
+            "code": "SE",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 210,
         "fields": {
             "name": "Switzerland",
-            "code": "CH"
+            "code": "CH",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 211,
         "fields": {
             "name": "Syrian Arab Republic",
-            "code": "SY"
+            "code": "SY",
+            "advisory_state": 3,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 212,
         "fields": {
             "name": "Taiwan",
-            "code": "TW"
+            "code": "TW",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 213,
         "fields": {
             "name": "Tajikistan",
-            "code": "TJ"
+            "code": "TJ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 214,
         "fields": {
             "name": "Tanzania",
-            "code": "TZ"
+            "code": "TZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 215,
         "fields": {
             "name": "Thailand",
-            "code": "TH"
+            "code": "TH",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 216,
         "fields": {
             "name": "Timor-Leste",
-            "code": "TL"
+            "code": "TL",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 217,
         "fields": {
             "name": "Togo",
-            "code": "TG"
+            "code": "TG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 218,
         "fields": {
             "name": "Tokelau",
-            "code": "TK"
+            "code": "TK",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 219,
         "fields": {
             "name": "Tonga",
-            "code": "TO"
+            "code": "TO",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 220,
         "fields": {
             "name": "Trinidad and Tobago",
-            "code": "TT"
+            "code": "TT",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 221,
         "fields": {
             "name": "Tunisia",
-            "code": "TN"
+            "code": "TN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 222,
         "fields": {
             "name": "Turkey",
-            "code": "TR"
+            "code": "TR",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 223,
         "fields": {
             "name": "Turkmenistan",
-            "code": "TM"
+            "code": "TM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 224,
         "fields": {
             "name": "Turks and Caicos Islands",
-            "code": "TC"
+            "code": "TC",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 225,
         "fields": {
             "name": "Tuvalu",
-            "code": "TV"
+            "code": "TV",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 226,
         "fields": {
             "name": "Uganda",
-            "code": "UG"
+            "code": "UG",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 227,
         "fields": {
             "name": "Ukraine",
-            "code": "UA"
+            "code": "UA",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 228,
         "fields": {
             "name": "United Arab Emirates",
-            "code": "AE"
+            "code": "AE",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 229,
         "fields": {
             "name": "United Kingdom",
-            "code": "GB"
+            "code": "GB",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 230,
         "fields": {
             "name": "United States",
-            "code": "US"
+            "code": "US",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 231,
         "fields": {
             "name": "United States Minor Outlying Islands",
-            "code": "UM"
+            "code": "UM",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 232,
         "fields": {
             "name": "Uruguay",
-            "code": "UY"
+            "code": "UY",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 233,
         "fields": {
             "name": "Uzbekistan",
-            "code": "UZ"
+            "code": "UZ",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 234,
         "fields": {
             "name": "Vanuatu",
-            "code": "VU"
+            "code": "VU",
+            "advisory_state": 0,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 235,
         "fields": {
             "name": "Venezuela",
-            "code": "VE"
+            "code": "VE",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 236,
         "fields": {
             "name": "Vietnam",
-            "code": "VN"
+            "code": "VN",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 237,
         "fields": {
             "name": "Virgin Islands, British",
-            "code": "VG"
+            "code": "VG",
+            "advisory_state": 2,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 238,
         "fields": {
             "name": "Virgin Islands, U.S.",
-            "code": "VI"
+            "code": "VI",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 239,
         "fields": {
             "name": "Wallis and Futuna",
-            "code": "WF"
+            "code": "WF",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 240,
         "fields": {
             "name": "Western Sahara",
-            "code": "EH"
+            "code": "EH",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 241,
         "fields": {
             "name": "Yemen",
-            "code": "YE"
+            "code": "YE",
+            "advisory_state": null,
+            "malaria_presence": false
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 242,
         "fields": {
             "name": "Zambia",
-            "code": "ZM"
+            "code": "ZM",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
-        "model": "task_factory.Country",
+        "model": "task_factory.country",
         "pk": 243,
         "fields": {
             "name": "Zimbabwe",
-            "code": "ZW"
+            "code": "ZW",
+            "advisory_state": 1,
+            "malaria_presence": true
         }
     },
     {
@@ -2028,8 +2478,2917 @@
                 114,
                 182,
                 214,
-                226           
+                226
             ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 1,
+        "fields": {
+            "category": "Routine Vaccines",
+            "description": "Be sure that your\u00a0routine vaccines, as per your province or territory, are up-to-date regardless of your travel destination.Some of these vaccines include: measles-mumps-rubella (MMR), diphtheria, tetanus, pertussis, polio, varicella (chickenpox), influenza and others.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                73,
+                74,
+                75,
+                76,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                110,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                163,
+                164,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                176,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 2,
+        "fields": {
+            "category": "Vaccines to Consider",
+            "description": "You may be at risk for these vaccine-preventable diseases while travelling in this country. Talk to your travel health provider about which ones are right for you.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                73,
+                74,
+                75,
+                76,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                110,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                163,
+                164,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                176,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 3,
+        "fields": {
+            "category": "Hepatitis A",
+            "description": "Hepatitis A is a disease of the liver spread\u00a0through contaminated food\u00a0and water or contact with an infected person. All those travelling to regions with a risk of hepatitis A infection should get vaccinated.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                7,
+                8,
+                10,
+                11,
+                12,
+                13,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                75,
+                76,
+                78,
+                79,
+                80,
+                82,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                101,
+                102,
+                103,
+                104,
+                107,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                127,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                156,
+                158,
+                159,
+                160,
+                161,
+                163,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                187,
+                188,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                204,
+                205,
+                206,
+                208,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 4,
+        "fields": {
+            "category": "Hepatitis B",
+            "description": "Hepatitis B is a disease of the liver spread through blood or other bodily fluids. Travellers who may be exposed (e.g., through sexual contact, medical treatment,\u00a0sharing needles, tattooing, acupuncture or occupational exposure) should get vaccinated.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                73,
+                74,
+                75,
+                76,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                110,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                163,
+                164,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                176,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 5,
+        "fields": {
+            "category": "Influenza",
+            "description": "\n\tSeasonal influenza occurs worldwide. The flu season usually runs from November to April in the northern hemisphere, between April and October in the southern hemisphere and year round in the tropics. Influenza (flu) is caused by a virus spread from person to person when they cough or sneeze or by touching objects and surfaces that have been contaminated with the virus. Get the flu shot.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                73,
+                74,
+                75,
+                76,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                110,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                156,
+                157,
+                158,
+                159,
+                160,
+                161,
+                163,
+                164,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                176,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 6,
+        "fields": {
+            "category": "Measles: Awareness",
+            "description": "\n\tCases of measles have been reported in this country.Measles is a highly contagious viral disease and is common in most parts of the world.\n\tBe sure your measles vaccination is up-to-date regardless of your travel destination.",
+            "countries": [
+                1,
+                45,
+                91,
+                146,
+                160,
+                166,
+                175,
+                235
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 7,
+        "fields": {
+            "category": "Polio *Proof of vaccination*",
+            "description": "Polio\u00a0is present in this country.Recommendation:\n\t\tBe sure that your vaccination against polio is up to date.\u00a0Polio is part of the routine vaccine schedule for children in Canada.\n\t\tOne booster dose of the polio vaccine is recommended as an adult. \u00a0Proof of vaccination:\n\tIf you are staying more than 4 weeks in this country, you may have to show proof of polio vaccination when you leave the country.Receive a dose of the polio vaccine 1 to 12 months before you leave this country.Make sure that the polio vaccination is documented on the International Certificate of Vaccination or Prophylaxis. This is the only document accepted as proof of vaccination. They are provided at Yellow Fever Vaccination Centres.Carry the certificate as proof of vaccination.",
+            "countries": [
+                1,
+                160,
+                166
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 8,
+        "fields": {
+            "category": "Rabies",
+            "description": "Rabies is a deadly illness spread to humans through a bite, scratch or lick from an infected animal. Vaccination should be considered for travellers going to areas where rabies exists and who have a high risk of exposure (i.e., close contact with animals, occupational risk, and children).",
+            "countries": [
+                1,
+                3,
+                4,
+                7,
+                12,
+                16,
+                19,
+                23,
+                24,
+                26,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                42,
+                43,
+                45,
+                49,
+                50,
+                51,
+                53,
+                55,
+                56,
+                60,
+                62,
+                63,
+                64,
+                65,
+                66,
+                69,
+                78,
+                79,
+                80,
+                82,
+                89,
+                91,
+                92,
+                101,
+                102,
+                103,
+                104,
+                112,
+                113,
+                114,
+                116,
+                117,
+                119,
+                120,
+                122,
+                123,
+                124,
+                125,
+                129,
+                131,
+                135,
+                139,
+                142,
+                146,
+                148,
+                149,
+                150,
+                151,
+                153,
+                158,
+                159,
+                160,
+                166,
+                169,
+                171,
+                173,
+                180,
+                181,
+                182,
+                192,
+                195,
+                200,
+                201,
+                204,
+                205,
+                208,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                221,
+                222,
+                223,
+                226,
+                227,
+                233,
+                235,
+                236,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 9,
+        "fields": {
+            "category": "Typhoid",
+            "description": "Typhoid is a bacterial infection spread by contaminated food or water. Travellers to countries in South Asia should speak to a health care provider about getting vaccinated.",
+            "countries": [
+                1,
+                19,
+                26,
+                101,
+                134,
+                153,
+                166,
+                204
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 10,
+        "fields": {
+            "category": "Yellow Fever - Country Entry Requirements",
+            "description": "Yellow fever is a disease caused by a flavivirus from the bite of an infected mosquito.\n\tTravellers get vaccinated either because it is required to enter a country or because it is recommended for their protection.Risk\n\t\tThere is no risk of yellow fever in this country.Country Entry Requirement*\n\t\tProof of vaccination is required if you are coming from a country where yellow fever occurs.Recommendation\n\t\tVaccination is not recommended.\n\t\tDiscuss travel plans, activities, and destinations with a health care provider.There is currently a shortage of the yellow fever vaccine in Canada. It is important for travellers to contact a designated\u00a0Yellow Fever Vaccination Centre\u00a0well in advance of their trip to ensure that the vaccine is available.About Yellow FeverYellow Fever Vaccination Centre\n\t* It is important to note that\u00a0country entry requirements\u00a0may not reflect your risk of yellow fever at your destination. It is recommended that you contact the nearest\u00a0diplomatic or consular office\u00a0of the destination(s) you will be visiting to verify any additional entry requirements.",
+            "countries": [
+                1,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                22,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                49,
+                50,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                68,
+                69,
+                70,
+                72,
+                73,
+                74,
+                75,
+                76,
+                78,
+                79,
+                80,
+                81,
+                82,
+                83,
+                84,
+                85,
+                86,
+                87,
+                88,
+                89,
+                91,
+                92,
+                93,
+                98,
+                99,
+                100,
+                101,
+                102,
+                103,
+                104,
+                105,
+                107,
+                108,
+                110,
+                112,
+                113,
+                114,
+                115,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                127,
+                128,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                146,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                154,
+                156,
+                157,
+                159,
+                160,
+                161,
+                163,
+                164,
+                165,
+                166,
+                167,
+                169,
+                170,
+                171,
+                173,
+                175,
+                176,
+                177,
+                178,
+                180,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                197,
+                198,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                209,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                229,
+                232,
+                233,
+                234,
+                235,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 11,
+        "fields": {
+            "category": "Measles",
+            "description": "Measles\u00a0is a highly contagious viral disease and is common in most parts of the world.\n\tBe sure your measles vaccination is up-to-date regardless of your travel destination.",
+            "countries": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                16,
+                17,
+                18,
+                19,
+                20,
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                31,
+                33,
+                35,
+                36,
+                37,
+                38,
+                40,
+                41,
+                42,
+                43,
+                44,
+                49,
+                50,
+                51,
+                52,
+                53,
+                56,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66,
+                69,
+                70,
+                72,
+                75,
+                76,
+                78,
+                79,
+                80,
+                82,
+                83,
+                85,
+                86,
+                87,
+                88,
+                89,
+                92,
+                93,
+                98,
+                102,
+                103,
+                104,
+                107,
+                110,
+                112,
+                113,
+                114,
+                115,
+                116,
+                117,
+                118,
+                119,
+                120,
+                121,
+                122,
+                123,
+                124,
+                125,
+                126,
+                129,
+                130,
+                131,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138,
+                139,
+                140,
+                141,
+                142,
+                143,
+                145,
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153,
+                156,
+                157,
+                158,
+                159,
+                161,
+                163,
+                164,
+                165,
+                167,
+                169,
+                170,
+                171,
+                173,
+                177,
+                178,
+                181,
+                182,
+                184,
+                185,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192,
+                194,
+                195,
+                196,
+                199,
+                200,
+                201,
+                203,
+                204,
+                205,
+                206,
+                208,
+                210,
+                211,
+                212,
+                213,
+                214,
+                215,
+                216,
+                217,
+                218,
+                219,
+                220,
+                221,
+                222,
+                223,
+                224,
+                225,
+                226,
+                227,
+                228,
+                232,
+                233,
+                234,
+                236,
+                237,
+                242,
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 12,
+        "fields": {
+            "category": "Tick-borne encephalitis",
+            "description": "RiskTick-borne encephalitis is present in some areas of this country.\u00a0\n\t\tIt is a viral disease that affects the central nervous system (brain and spinal cord).\n\t\tIt is spread to humans by the bite of infected ticks or when you consume unpasteurized milk products.Recommendation\n\t\tVaccination should be considered for those who may be exposed to ticks during outdoor activities.\n\t\tA vaccine against TBE does exist but is only available in countries where the disease is present.\n\t\tLearn more on what you can do to prevent tick-borne encephalitis (TBE)?",
+            "countries": [
+                3,
+                15,
+                28,
+                34,
+                45,
+                55,
+                59,
+                68,
+                73,
+                74,
+                81,
+                84,
+                99,
+                108,
+                110,
+                113,
+                117,
+                119,
+                121,
+                126,
+                127,
+                146,
+                164,
+                175,
+                180,
+                181,
+                197,
+                198,
+                209,
+                210,
+                222,
+                227
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 13,
+        "fields": {
+            "category": "Polio",
+            "description": "\n\tThere is a risk of polio in this country.\u00a0Recommendations:\n\t\tBe sure that your vaccination against polio is up to date. Polio is part of the routine vaccine schedule for children in Canada.\n\t\tOne booster dose of the polio vaccine is recommended as an adult.\u00a0",
+            "countries": [
+                7,
+                24,
+                36,
+                38,
+                42,
+                43,
+                45,
+                50,
+                66,
+                69,
+                91,
+                101,
+                103,
+                104,
+                107,
+                112,
+                114,
+                120,
+                122,
+                124,
+                131,
+                150,
+                159,
+                182,
+                195,
+                200,
+                213,
+                214,
+                222,
+                223,
+                226,
+                227,
+                233,
+                242
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 14,
+        "fields": {
+            "category": "Japanese encephalitis",
+            "description": "Japanese encephalitis is a viral infection that can cause swelling of the brain. It is spread by the bite of an infected mosquito. Risk is low for most travellers. Vaccination should be considered for those who may be exposed to mosquito bites (e.g., spending a large amount of time outdoors) while travelling in regions with risk of Japanese encephalitis.",
+            "countries": [
+                14,
+                19,
+                26,
+                33,
+                37,
+                45,
+                98,
+                101,
+                102,
+                110,
+                116,
+                117,
+                120,
+                129,
+                133,
+                150,
+                153,
+                166,
+                170,
+                173,
+                181,
+                196,
+                199,
+                204,
+                212,
+                215,
+                216,
+                236
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 15,
+        "fields": {
+            "category": "Measles: outbreak",
+            "description": "\n\tOutbreaks of measles are ongoing.Measles is a highly contagious viral disease that can cause serious complications for some people.\n\tYou are at increased risk of measles infection if you have not had the illness or if you are not up to date on your vaccinations.",
+            "countries": [
+                15,
+                22,
+                34,
+                55,
+                57,
+                59,
+                68,
+                73,
+                74,
+                81,
+                84,
+                99,
+                100,
+                105,
+                108,
+                127,
+                128,
+                154,
+                175,
+                176,
+                180,
+                197,
+                198,
+                203,
+                209,
+                229
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 16,
+        "fields": {
+            "category": "Meningococcal disease",
+            "description": "\n\tThis country is in the African Meningitis Belt, an area where there are many cases of meningococcal disease. Meningococcal disease is a serious and sometimes fatal infection. Travellers who may be at high risk should consider getting vaccinated. High-risk travellers include those living or working with the local population (e.g., health care workers) or those travelling to crowded areas or taking part in large gatherings.",
+            "countries": [
+                24,
+                35,
+                38,
+                42,
+                43,
+                51,
+                69,
+                79,
+                82,
+                91,
+                92,
+                114,
+                135,
+                139,
+                159,
+                160,
+                192,
+                205,
+                217,
+                226
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 17,
+        "fields": {
+            "category": "Yellow Fever Vaccination",
+            "description": "Yellow fever is a disease caused by a flavivirus from the bite of an infected mosquito.Travellers get vaccinated either because it is required to enter a country or because it is recommended for their protection.About Yellow FeverYellow Fever Vaccination Centres in Canada",
+            "countries": [
+                34,
+                44,
+                145,
+                222,
+                228
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 18,
+        "fields": {
+            "category": "Polio - Temporary Vaccine Recommendation",
+            "description": "Polio\u00a0is present in this country.Recommendation:\n\t\tBe sure that your vaccination against polio is up to date.\u00a0Polio is part of the routine vaccine\u00a0schedule for children in Canada.\n\t\tOne booster dose of the polio vaccine is recommended as an adult. \u00a0Temporary vaccine recommendation:\n\t\tIf you are staying more than 4 weeks in this country, you may need a booster dose of the\u00a0polio vaccine.\n\t\tProof of polio vaccination may be requested when you enter or leave the country.\n\t\tSee your health care provider to find out if you need the polio vaccine before your trip.",
+            "countries": [
+                51,
+                211
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 19,
+        "fields": {
+            "category": "Yellow Fever - Country Requirements",
+            "description": "Yellow fever is a disease caused by a flavivirus from the bite of an infected mosquito.\n\tTravellers get vaccinated either because it is required to enter a country or because it is recommended for their protection.Risk\n\t\tThere is no risk of yellow fever in this country.Country Entry Requirement*\n\t\tThis country is now asking for proof of vaccination if you are arriving from a country where yellow fever occurs. More information can be found on Nicaragua Ministry of Health's website (in Spanish only).Recommendation\n\t\tVaccination is not recommended.\n\t* It is important to note that country entry requirements\u00a0 may not reflect your risk of yellow fever at your destination. It is recommended that you contact the nearest diplomatic or consular office\u00a0 of the destination(s) you will be visiting to verify any additional entry requirements.About Yellow FeverYellow Fever Vaccination Centres in Canada",
+            "countries": [
+                158
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 20,
+        "fields": {
+            "category": "Meningococcal disease, Hajj and Umrah requirement",
+            "description": "\n\tVaccination against four strains of bacteria that cause meningococcal disease is required to enter Saudi Arabia to participate in the Hajj and Umrah.",
+            "countries": [
+                191
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 21,
+        "fields": {
+            "category": "Polio, Hajj and Umrah requirement",
+            "description": "\n\tProof of polio vaccination is required to participate in the Hajj and Umrah if entering Saudi Arabia from certain countries. Discuss this with your health care provider to see if it applies to you.",
+            "countries": [
+                191
+            ]
+        }
+    },
+    {
+        "model": "task_factory.vaccine",
+        "pk": 22,
+        "fields": {
+            "category": "Typhoid: Current Outbreak",
+            "description": "Typhoid is a bacterial infection spread by contaminated food or water. Risk is higher for children, travellers going to rural areas, visiting friends and relatives or travelling for a long period of time. Travellers visiting regions with typhoid risk, especially those exposed to places with poor sanitation should speak to a health care provider about vaccination.",
+            "countries": [
+                243
+            ]
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 1,
+        "fields": {
+            "description": "Afghanistan is in an active seismic zone. An earthquake may cause landslides in affected areas. Strong aftershocks are possible up to one week after the initial quake.Avalanches, floods and landslides occur, which could result in a high number of casualties and serious property damage.In February 2017, heavy snows and avalanches caused over a hundred deaths and led to food shortages",
+            "country": 1
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 2,
+        "fields": {
+            "description": "Algeria is located in an active seismic zone. \u00a0Seasonal rains can cause flooding.",
+            "country": 4
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 3,
+        "fields": {
+            "description": "The weather in mountainous areas is highly unpredictable and avalanches present a risk. If you are planning on mountaineering or a skiing holiday, consult Ski Andorra\u00a0for information on weather and safety conditions. Take note of the coordinates for the Embassy of Canada to Spain in Madrid, in the event of an emergency.",
+            "country": 6
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 4,
+        "fields": {
+            "description": "The rainy season extends from November to April. Heavy rains can cause sudden flooding throughout the country and may damage infrastructure. Expect delays and allow for more time to reach your destination, as roads may be affected.",
+            "country": 7
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 5,
+        "fields": {
+            "description": "Antarctica is the coldest, driest, highest (on average) and windiest continent, with 99\u00a0percent of its area covered by a permanent ice sheet. Weather conditions\u00a0are severe and can vary.",
+            "country": 9
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 6,
+        "fields": {
+            "description": "Armenia is located in an active seismic zone.Landslides can occur.",
+            "country": 12
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 7,
+        "fields": {
+            "description": "Avalanches present a risk and have resulted in fatalities during winter. The alpine areas of Vorarlberg, Tyrol, Styria and Salzburg have been affected. Consult the Austrian National Tourist Office for information on weather and safety conditions. Avalanche information can also be obtained by calling +43 (1) 512 508 8022 55 or by visiting European Avalanche Warning Services or Lawinen info (available in German only).\u00a0Advice should be followed carefully.Heavy rains may occur in the spring and summer, sometimes resulting in flooding and mudslides.",
+            "country": 15
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 8,
+        "fields": {
+            "description": "Azerbaijan is in an active seismic zone.Heavy rains may trigger floods and landslides, but there are also periods of drought.",
+            "country": 16
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 9,
+        "fields": {
+            "description": "Bahrain is subject to sand and dust storms, as well as periods of drought.",
+            "country": 18
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 10,
+        "fields": {
+            "description": "Belgium has a temperate climate with little variation from one region to another.",
+            "country": 22
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 11,
+        "fields": {
+            "description": "In the south, the rainy seasons occur from April to mid-July and mid-September to October. In the north, the rainy season extends from June to September. Unpaved roads can become impassable during a rainy season. The harmattan, a burning, dusty and sand-filled wind, blows in from the desert from December to March. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 24
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 12,
+        "fields": {
+            "description": "Bhutan is located in an active seismic zone.The rainy (monsoon) season extends from May to\u00a0October. Landslides occur frequently. Mountain roads can be hazardous, even in good weather. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 26
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 13,
+        "fields": {
+            "description": "Travelling during the rainy season (November through March) is difficult, as many roads become impassable. In particular, the Uyuni Salt Flats become dangerous to navigate in the rainy season. Heavy rains may contribute to dangerous landslides. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 27
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 14,
+        "fields": {
+            "description": "Severe flooding in the spring or after heavy rains is a potential risk year-round. Exercise caution in narrow river valleys at such times.Bosnia and Herzegovina is in an active seismic zone, and minor earthquakes are common.Bush and forest fires are common in the summer, but are generally contained within inaccessible areas. In the event of a wildfire, avoid the affected areas, follow the advice of local authorities and monitor local media. If you suffer from respiratory ailments, be aware that the air quality in areas near active fires may deteriorate due to heavy smoke.",
+            "country": 28
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 15,
+        "fields": {
+            "description": "There are two seasons in Botswana: summer (September to April), with frequent rains and thunderstorms, and winter (May to August), with cold and dry days and nights.",
+            "country": 29
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 16,
+        "fields": {
+            "description": "Brunei is located in an active seismic zone.The rainy (or monsoon) seasons extend from September to January and from May to July. Severe rainstorms can cause flooding and landslides, as well as hamper the provision of essential services.Unrestricted burning in neighbouring Indonesia periodically causes atmospheric pollution to rise to unhealthy levels. Levels change quickly and should be closely monitored by consulting local news and weather reports.",
+            "country": 33
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 17,
+        "fields": {
+            "description": "Bulgaria is in an active seismic zone.Bulgaria is prone to flooding after heavy rains. Flooding is often localized, but widespread flooding has occurred in the past. Consult the Bulgarian National Institute of Meteorology and Hydrology for information and flooding alerts.In winter, there is a risk of avalanches in mountainous regions. This risk increases when temperatures rise rapidly following a particularly harsh winter. Extreme weather can cause landslides.In the summer and early fall, there is a risk of wildfires.Monitor local news and weather reports and follow the instructions of local authorities.",
+            "country": 34
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 18,
+        "fields": {
+            "description": "The dry season extends from November to May and the wet season is from June to October. Heavy rain and wind can occur during the wet season, rendering some unpaved roads impassable. Harmattan winds bring sand and dust from the Sahara desert between December and February.Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 35
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 19,
+        "fields": {
+            "description": "The dry season extends from mid-May to early October.The rainy season begins in February and continues to mid-May. During the rainy season, heavy downpours are common and can result in flash floods. Infrastructure and transportation routes may be damaged and secondary roads may become impassable. You should exercise caution, monitor local news and regional weather forecasts, and plan accordingly.",
+            "country": 36
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 20,
+        "fields": {
+            "description": "The rainy season occurs from June to September in the north and from July to November in the south. Travel to certain rural areas may be difficult during these periods, as heavy rains and flash floods can make unpaved roads impassable. Keep informed of regional weather forecasts and plan accordingly.Mountaineers should consult with local authorities prior to ascending Mount Cameroon. Exercise caution around the Nyos and Monoum volcanic lakes because of periodical toxic fumes.",
+            "country": 38
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 21,
+        "fields": {
+            "description": "Cabo Verde is very hot and receives little rain throughout the year. The climate is dry and windy. The rainy season usually occurs from August to October, but there has been a severe drought for several years. Fogo receives more rain than the other islands.Natural disasters are possible due to regional volcanic activity. Follow the instructions of local authorities, including evacuation orders, and monitor local media reports.",
+            "country": 40
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 22,
+        "fields": {
+            "description": "The rainy season extends from May to October and the dry season, from December to April. Some roads may become impassible during the rainy season. As you head north in the country, the length of the rainy season gradually diminishes to four months (June to September). Flash floods are common during the rainy season. Between February and May, the temperature can reach 40o C in the north and the humidity can be oppressive.",
+            "country": 42
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 23,
+        "fields": {
+            "description": "The rainy season in the south lasts from May to October; the rains in central Chad occur from June to September. Many roads become impassable during the rainy season. The north receives little rain. You should keep informed of regional weather forecasts and plan accordingly, as rain barriers close affected roads during rainstorms and for three hours afterwards.",
+            "country": 43
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 24,
+        "fields": {
+            "description": "In the event of a natural disaster such as an earthquake, tsunami, volcanic eruption, forest fire, landslide or flood, official public government information is available at the Chilean Ministry of the Interior\u2019s national emergency office, known locally as ONEMI (Oficina Nacional de Emergencia \u2013 Ministerio del Interior y Seguridad P\u00fablica). Most of the website information is available in Spanish only; however, on the main page, ONEMI provides preparation and response recommendations in the case of earthquakes or tsunamis in both English and French. You can also follow ONEMI on Twitter, @ONEMIChile, for the latest emergency information.Border crossings can close due to severe weather conditions or earthquakes.",
+            "country": 44
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 25,
+        "fields": {
+            "description": "The Comoros archipelago is in an active seismic and volcanic zone.Cyclones and northeastern monsoons can occur during the hot and humid season, which generally lasts from November to April.Monitor local news for information on regional weather forecasts and plan accordingly.",
+            "country": 49
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 26,
+        "fields": {
+            "description": "The southern part of the country has a rainy season that extends from September to June. Some roads may become impassible during this period. Monitor regional weather forecasts and plan accordingly.",
+            "country": 50
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 27,
+        "fields": {
+            "description": "Rainy seasonThe rainy season extends from April to October in the north and from November to March in the south. Some roads may be impassable during these periods. You should remain informed of regional weather forecasts and plan accordingly.",
+            "country": 51
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 28,
+        "fields": {
+            "description": "Croatia is located in an active seismic zone.Bush and forest fires are common from June to September in the coastal areas of Croatia. In the event of a wildfire, avoid the affected areas, follow the advice of local authorities and monitor local media. If you suffer from respiratory ailments, take into account that the air quality in areas near active fires may deteriorate due to heavy smoke. Visit the\u00a0national protection and rescue (DUZS) website (available in Croatian) for the latest information on wildfires in Croatia.Heavy rains are frequent in the summer in the Eastern and Central regions, sometimes resulting in localized flooding. Exercise caution, monitor local media and follow the advice of local authorities.",
+            "country": 55
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 29,
+        "fields": {
+            "description": "Cyprus is located in an active seismic zone and minor earthquakes are relatively common.Beware of strong seas and undertows, and take note of warning signs on beaches.",
+            "country": 57
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 30,
+        "fields": {
+            "description": "Flooding is a threat in coastal areas protected from the sea by dikes.",
+            "country": 59
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 31,
+        "fields": {
+            "description": "The climate is very dry and hot from May to October.",
+            "country": 60
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 32,
+        "fields": {
+            "description": "Egypt, particularly Cairo and Eastern Sinai, is located in an active seismic zone. The country is also subject to sand and dust storms.",
+            "country": 64
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 33,
+        "fields": {
+            "description": "The climate is hot and humid. On Bioko Island, the rainy season extends from July to January. On the mainland, there are two rainy seasons - one from April to May and one from October to December. Severe windstorms occur occasionally. Some roads may be impassable to all but four-wheel-drive vehicles during the rainy season. You should keep informed of regional weather forecasts and plan accordingly.",
+            "country": 66
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 34,
+        "fields": {
+            "description": "Heavy flooding can occur in spring.",
+            "country": 68
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 35,
+        "fields": {
+            "description": "The weather conditions are unpredictable and can change rapidly.",
+            "country": 70
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 36,
+        "fields": {
+            "description": "Severe cold weather and deep snow cover occur in winter.",
+            "country": 73
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 37,
+        "fields": {
+            "description": "The rainy season extends from January to June. Flooding can occur during this period. Monitor weather forecasts and plan accordingly.",
+            "country": 75
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 38,
+        "fields": {
+            "description": "The rainy seasons extend from October to mid-December and mid-February to May. Some roads outside urban areas may be impassable during these periods. Monitor local weather reports and plan accordingly.",
+            "country": 78
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 39,
+        "fields": {
+            "description": "The rainy season extends from June to October. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 79
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 40,
+        "fields": {
+            "description": "Georgia is located in an active seismic zone. An earthquake may cause landslides in affected areas, and strong aftershocks may occur up to one week after the initial earthquake.Heavy rains may trigger floods and landslides.",
+            "country": 80
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 41,
+        "fields": {
+            "description": "Temperatures can be lower at high altitudes in the Alps.There is a possibility of flooding in spring and summer. Exercise caution, monitor local media and follow the advice of local authorities.",
+            "country": 81
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 42,
+        "fields": {
+            "description": "The rainy seasons extend from March to November. Flooding across the country can occur during this season, causing widespread damage, including the possibility of fatalities and significant loss of infrastructure and property.During the hot and dry season, temperatures can reach 38 degrees Celsius. However, sporadic and heavy rains may still occur. You should keep informed and plan accordingly.",
+            "country": 82
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 43,
+        "fields": {
+            "description": "Gibraltar is subject to periodic droughts. It is also located in an active seismic zone.",
+            "country": 83
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 44,
+        "fields": {
+            "description": "Greece is located in an active seismic zone. In the event of an earthquake-related emergency, follow the instructions of local authorities.Floods may occur during the spring and winter months throughout the country. Exercise caution, monitor media and follow the instructions of local authorities.Bush and forest fires are common from June to September. In case of a major fire, stay away from affected areas, follow the advice of local emergency services personnel and monitor local media. From Greece, dial (210) 324 8098 to get updates on the situation. The air quality in areas near active fires may deteriorate due to heavy smoke and affect travellers with respiratory ailments.",
+            "country": 84
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 45,
+        "fields": {
+            "description": "The climate is extreme, especially during winter, with severe cold weather.",
+            "country": 85
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 46,
+        "fields": {
+            "description": "The local prefecture is responsible for public safety on the islands comprising Guadeloupe. For more information, consult Les services de l\u2019\u00c9tat en Guadeloupe (French only).",
+            "country": 87
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 47,
+        "fields": {
+            "description": "The rainy season extends from May to September. Roads may become impassable during this period. You should keep informed of regional weather forecasts and plan accordingly.",
+            "country": 91
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 48,
+        "fields": {
+            "description": "The rainy season extends from May to November, with high humidity from July to September. The dry season lasts from December to April, with hot winds blowing from the interior. You should keep informed of regional weather forecasts and plan accordingly.",
+            "country": 92
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 49,
+        "fields": {
+            "description": "There are two rainy seasons in Guyana: from May to July and from November to January. During this time, rainfall is abundant and may result in major flooding,\u00a0particularly in coastal areas.The coast of Guyana is below sea level and protected by a sea defence and dam system. Infrastructure, including drainage systems, is poorly maintained. Monitor regional weather forecasts and plan accordingly.",
+            "country": 93
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 50,
+        "fields": {
+            "description": "Floods and snowstorms may have widespread impacts, as Hungarian cities and villages may not be well equipped to deal with severe weather.Every year, flooding occurs in the spring in the northeast region of Hungary, along the watershed of the upper Tisza River, causing severe damage to housing and displacing families. Periodically, Hungary also experiences flooding along the Danube River.During snowstorms, parts of the country may be isolated for several days as services close down.Exercise caution, monitor local media and follow the instructions of local authorities.",
+            "country": 99
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 51,
+        "fields": {
+            "description": "Iceland is located in an active seismic zone but serious earthquakes are rare.The climate can be unpredictable regardless of the time of year. For\u00a0climate information and\u00a0warnings, visit the\u00a0Icelandic Meteorological Office website or dial +354 522 6000 or +354 902 0600. Information is available in English, 24 hours a day, seven days a week. Monitor weather reports closely.",
+            "country": 100
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 52,
+        "fields": {
+            "description": "Iraq is subject to sandstorms and dust storms, as well as flooding caused by heavy rains.The weather is very dry and hot from May to October.",
+            "country": 104
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 53,
+        "fields": {
+            "description": "Heavy rains are frequent, sometimes resulting in flooding.\u00a0",
+            "country": 105
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 54,
+        "fields": {
+            "description": "Israel, Jerusalem, the West Bank and the Gaza Strip are located in an active seismic zone. There have been no major earth tremors in recent years.Sandstorms occur in spring and summer.Flooding is common during the winter and may result in road closures.",
+            "country": 107
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 55,
+        "fields": {
+            "description": "Jordan is located in an active seismic zone. Landslides are possible in affected areas, and strong aftershocks may occur up to one week after the initial earthquake.Droughts, flash floods, as well as sand and dust storms occur.Snowfall is infrequent, but causes extensive road closures and disrupts public services when it occurs.",
+            "country": 112
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 56,
+        "fields": {
+            "description": "Kazakhstan is located in an active seismic zone. Avalanches and landslides are possible in mountainous areas, especially in the spring.Kazakhstan experiences severe weather conditions, especially in the winter when temperatures can fall below -30 degrees centigrade and strong winds can result in wind chill temperatures below -50 degrees centigrade. Highways and roads are regularly closed in the winter months due to cold, wind and snow. Travellers should ensure they prepare appropriately and take adequate precautions when travelling outside of urban areas in the winter.Industrial pollution is severe in some cities.",
+            "country": 113
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 57,
+        "fields": {
+            "description": "The rainy (monsoon) season extends from the end of June until August, and typhoons occur in August and September. See our Typhoons and monsoons page for more information.Severe rainstorms can cause flooding and landslides, which in turn can result in significant loss of life and extensive damage to infrastructure, as well as hamper the provision of essential services. North Korea is also prone to drought. Keep informed of regional weather forecasts, avoid disaster areas and follow the advice of local authorities.",
+            "country": 116
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 58,
+        "fields": {
+            "description": "The rainy (monsoon) season extends from the end of June until August. July is usually the wettest month. Severe rainstorms can cause flooding and landslides. Typhoons occur in August and September. These storms can result in significant loss of life and extensive damage to infrastructure, and can hamper the provision of essential services. Keep informed of regional weather forecasts, avoid disaster areas and follow the advice of local authorities. Consult our Typhoons and monsoons page for more information.Pollution levels, caused by yellow dust, peak in March, April and May.",
+            "country": 117
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 59,
+        "fields": {
+            "description": "The rainy season extends from December to January and often results in flooding.High levels of humidity and severe heat occur from June to September.Severe sand and dust storms can occur throughout the year.",
+            "country": 118
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 60,
+        "fields": {
+            "description": "The Kyrgyz Republic is located in an active seismic zone.Avalanches and landslides are common in mountainous areas, especially in the spring. They can be hazardous and block road access.",
+            "country": 119
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 61,
+        "fields": {
+            "description": "Winter weather can be severe due to heavy snowfall and extremely cold temperatures. Flooding may occur in spring.",
+            "country": 121
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 62,
+        "fields": {
+            "description": "Lebanon is located in a seismic zone. There have been several minor earthquakes in recent years.In the winter months, mountain roads, including the main Beirut-Damascus highway, may be temporarily blocked or become impassable due to heavy snowfall. Flash floods can occur, rendering roads temporarily dangerous or impracticable.",
+            "country": 122
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 63,
+        "fields": {
+            "description": "Violent thunderstorms occur in summer (November to February) and result in several deaths yearly. You should keep informed of regional weather forecasts and plan accordingly. Weather conditions change rapidly in mountainous regions. Carry a blanket or warm clothes and a flashlight in case of snowfall or vehicle breakdown in mountain areas, where the weather can become cold quickly and unexpectedly, even in summer months.",
+            "country": 123
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 64,
+        "fields": {
+            "description": "The rainy season extends from May to November. Heavy rains may result in localized flash flooding and roads may become impassable in affected areas.During the dry season, which extends from December to March, the country is affected by the harmattan, a seasonal wind that blows large amounts of sand and dust into the air and can severely limit visibility. Monitor local media to keep informed of regional weather forecasts and plan accordingly.",
+            "country": 124
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 65,
+        "fields": {
+            "description": "The rainy season extends from November to March.Temperatures can reach 40\u00b0C between June and September. The desert area can be extremely hot during the day with cool nights. Follow regional weather forecasts and plan accordingly.",
+            "country": 125
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 66,
+        "fields": {
+            "description": "Unpredictable weather in mountainous areas can present an avalanche risk. Monitor local media to stay informed on regional weather, be prepared for varying conditions and follow the instructions of local authorities.",
+            "country": 126
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 67,
+        "fields": {
+            "description": "Lithuania is subject to cold temperatures, snowstorms and windstorms in winter.",
+            "country": 127
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 68,
+        "fields": {
+            "description": "Luxembourg is not prone to natural disasters.",
+            "country": 128
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 69,
+        "fields": {
+            "description": "Macedonia is located in an active seismic zone, although serious earthquakes are rare.Air pollution is severe in several cities in Macedonia. Monitor air pollution levels as they can vary throughout Macedonia and at times, even within the same city.Bush and forest fires can occur during the summer months. In case of a major fire, stay away from the affected area, follow the instructions of local emergency services personnel, and monitor local media for up-to-date information. The air quality in areas near active fires may deteriorate due to heavy smoke and could affect travellers with respiratory ailments.Between November and February, Skopje and surrounding areas can be affected by thick fog, which can affect air travel. Consult the Skopje airport website for information on potential delays caused by inclement weather.",
+            "country": 130
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 70,
+        "fields": {
+            "description": "The rainy season extends from November to March. Some roads may become impassable during this period. Cyclones can occur from late December to late March. They affect mainly the eastern part of the island, but the western part has been affected as well. Monitor local weather forecast and follow the advice of local authorities.",
+            "country": 131
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 71,
+        "fields": {
+            "description": "Maldives is in an active seismic zone and may be prone to earthquakes and tsunamis.The rainy (monsoon) season extends from November to April in the northeast, and May to October in the southwest. Flooding can occur. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 134
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 72,
+        "fields": {
+            "description": "There are three main seasons in Mali. The rainy season, when sudden, localized floods can occur, extends from June to October. The dry, cool season extends from November to February. A dry, hot season, with temperatures reaching 45\u00b0C, extends from March to June.Dust and sand storms are frequent.",
+            "country": 135
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 73,
+        "fields": {
+            "description": "Malta is located in an active seismic zone. However, earthquakes are rare.",
+            "country": 136
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 74,
+        "fields": {
+            "description": "The climate in Mauritania is very hot and dry.The rainy season extends from July to October. Transportation routes, power and telecommunications systems may be affected in some areas, and some roads may be impassable due to flooding. Exercise caution, monitor local media and follow the instructions of local authorities.",
+            "country": 139
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 75,
+        "fields": {
+            "description": "The cyclone season extends from November to May. Keep informed of regional weather forecasts and plan accordingly. For the cyclone information line, dial 96. You can also consult the Mauritius Meteorological Services website.",
+            "country": 140
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 76,
+        "fields": {
+            "description": "There are two seasons in Mayotte: the hot and humid season (November to April), with its possible cyclones and northeastern monsoons; and the dry season (May to October).",
+            "country": 141
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 77,
+        "fields": {
+            "description": "In the event of a natural disaster such as a hurricane, earthquake, tsunami, landslide, flood or volcanic eruption, official\u00a0information is available\u00a0from the Mexican government\u2019s national civil protection agency, Sistema Nacional de Protecci\u00f3n Civil (in Spanish).",
+            "country": 142
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 78,
+        "fields": {
+            "description": "Monaco is subject to extremely hot and dry weather in summer.",
+            "country": 145
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 79,
+        "fields": {
+            "description": "Mongolia is located in an active seismic zone.There is a short rainy season from mid-July to mid-September. Dust storms occur between May and June.Mongolia is subject to extreme temperatures (from minus 35 to 40 degrees Celsius in the winter to plus 35 degrees Celsius in the summer).",
+            "country": 146
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 80,
+        "fields": {
+            "description": "The rainy season usually extends from November to March, during which flash floods can occur frequently. These can be especially dangerous in the High Atlas Valley area. Monitor regional weather forecasts and plan accordingly.Morocco is located in an active seismic zone.",
+            "country": 148
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 81,
+        "fields": {
+            "description": "The rainy season extends from November to March. During this period, rainfall is abundant and may result in local flash flooding. Roads may become impassable in flood-affected areas. Follow the advice of local authorities, monitor local news and weather forecasts, and avoid affected areas.Cyclones may also occur along the coastal area. Keep informed of regional weather forecasts and plan accordingly.\u00a0",
+            "country": 149
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 82,
+        "fields": {
+            "description": "The dry season extends from April to October, and the rainy season extends from November to March. Unpaved roads may become impassable during the rainy season. You should follow regional weather forecasts and plan accordingly.",
+            "country": 151
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 83,
+        "fields": {
+            "description": "Flooding is a threat on coastal lands protected from the sea by dikes.",
+            "country": 154
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 84,
+        "fields": {
+            "description": "There are three seasons in Niger. The cool, dry season extends from November to February; the hot, dry season extends from March to June; and the rainy season extends from June/July to September/October. During the rainy season, most of the secondary roads may be impassable. Follow weather forecasts and plan accordingly.",
+            "country": 159
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 85,
+        "fields": {
+            "description": "The rainy season extends from May to October. During this period, rainfall is abundant and may result in localized flash flooding. Roads may become impassable in affected areas.In summer, central and northern Nigeria periodically experience heat waves. During the dry season, from November to April, harmattan winds bring sand and dust from the Sahara desert.Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 160
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 86,
+        "fields": {
+            "description": "Avalanches and rockslides present a risk in mountainous areas where the weather is highly unpredictable. Monitor local media and the Norwegian meteorological service to stay informed on weather patterns before setting off on a trek.",
+            "country": 164
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 87,
+        "fields": {
+            "description": "The rainy season extends from May to September and often causes flooding in the far south. Heavy rains may cause wadis (dry riverbeds) to overflow, flooding underpasses and tunnels. Sand and dust storms occur during the dry season.Oman is subject to cyclones and tropical depressions, which are accompanied by strong winds and heavy rain. Flash floods and mudslides may occur, causing damage and inaccessibility to many transportation routes.",
+            "country": 165
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 88,
+        "fields": {
+            "description": "Severe earthquakes can occur in the western and northern regions of the country. Landslides are possible in affected areas, and strong aftershocks may occur up to one week after the initial quake. Transportation, health and telecommunications services may be affected, and land travel could be disrupted. Monitor local news reports, avoid disaster areas and follow the advice of local authorities.The monsoon season extends from July to September and can result in flooding, especially along the Indus River.Avalanches occasionally occur in the mountains.Pakistan\u2019s coastline is subject to tropical cyclones, which are usually accompanied by high winds and heavy rain. During any storm, flash floods and mudslides as well as damage to transportation routes and infrastructure may occur. Monitor regional weather forecasts and follow the advice of local authorities.",
+            "country": 166
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 89,
+        "fields": {
+            "description": "The rainy season, which extends from November to March, can affect the accessibility or reliability of intercity transit. During the rainy season, the roads in the northern part of the Chaco region are impassable, except for roads within Mennonite colonies.",
+            "country": 171
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 90,
+        "fields": {
+            "description": "Heavy rains and thunderstorms are frequent during the summer, sometimes resulting in flooding. Monitor regional weather forecasts and follow the instructions of local authorities.",
+            "country": 175
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 91,
+        "fields": {
+            "description": "The rainy season extends from December to January and may result in flooding.High levels of humidity and severe heat occur from June to September.Sand and dust storms also occur.",
+            "country": 178
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 92,
+        "fields": {
+            "description": "Romania is located in an active seismic zone.There is a risk of avalanches in mountainous regions when rapidly warming temperatures follow a particularly harsh winter. Extreme weather can cause landslides. Exercise caution, monitor local news and weather reports and follow the advice of local authorities. The Romanian government provides an emergency information guide, available in Romanian only.Extreme temperatures, in both summer and winter, may cause electricity outages.",
+            "country": 180
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 93,
+        "fields": {
+            "description": "Parts of Russia, such as Chechnya, the Kamchatka Peninsula and the Kuril Islands, are prone to seismic or volcanic activity.Spring flooding and summer forest fires occur throughout Siberia and parts of western Russia.In the summer months, there is a risk of forest fires that could affect the Moscow region. The air quality in areas near active fires may deteriorate due to heavy smoke and affect travellers with respiratory ailments. In case of forest fires, stay away from affected areas, follow the instructions of local emergency services personnel and monitor local media sources for up-to-date information.",
+            "country": 181
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 94,
+        "fields": {
+            "description": "Saint-Pierre-et-Miquelon is not prone to natural disasters.",
+            "country": 186
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 95,
+        "fields": {
+            "description": "San Marino is in an active seismic zone.Forest fires can occur, particularly in the summer months. In case of a major fire, stay away from affected areas, follow the instructions of local emergency services personnel and monitor local media for up-to-date information. The air quality in areas near active fires may deteriorate due to heavy smoke and affect travellers with respiratory ailments.",
+            "country": 189
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 96,
+        "fields": {
+            "description": "The rainy season extends from September to May. Some roads may be impassable during this period. You should keep informed of regional weather forecasts and plan accordingly.",
+            "country": 190
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 97,
+        "fields": {
+            "description": "Although Saudi Arabia is one of the driest countries in the world, heavy rains occur occasionally and can cause major flooding. This can severely affect overland travel and reduce the provision of essential services. Exercise caution, monitor local news and weather reports, and follow the advice of local authorities.Sand-laden winds from the northern deserts (shamals) occur most frequent in early summer and can blow at 40-48 km/h for days, creating difficult driving conditions.",
+            "country": 191
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 98,
+        "fields": {
+            "description": "The rainy seasons extend from August to September in the western, northwestern and northern regions and from July to September in the central and eastern regions. Heavy rains and tropical storms during these periods can make roads impassable. Follow regional weather forecasts and plan accordingly.",
+            "country": 192
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 99,
+        "fields": {
+            "description": "The monsoon season extends from November to February. The heaviest rainfall is usually from mid-December to mid-January. Keep informed of regional weather forecasts and plan accordingly.\u00a0\u00a0",
+            "country": 194
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 100,
+        "fields": {
+            "description": "The rainy season extends from May to November. Heavy rains may result in localized flash flooding and landslides, and roads may become impassable in affected areas. Keep informed of regional weather forecasts and plan accordingly.\u00a0\u00a0",
+            "country": 195
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 101,
+        "fields": {
+            "description": "Heavy rains are frequent in the spring and sometime result in flooding.",
+            "country": 197
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 102,
+        "fields": {
+            "description": "Slovenia is located in an active seismic zone.Severe winter weather, including snow or ice storms, can affect infrastructure and access to certain regions may be blocked. Slovenia\u2019s\u00a0Administration for Civil Protection and Disaster Relief\u00a0offers information on natural disasters as well as information on emergency preparedness.The weather in mountainous areas can be unpredictable. If you are planning on mountaineering or skiing, see Slovenia\u2019s\u00a0Official Travel Guide\u00a0for information on weather and safety conditions, and follow the advice carefully.",
+            "country": 198
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 103,
+        "fields": {
+            "description": "The climate in Somalia is very hot and dry. However, a monsoon season extends from May to October in the southwest and from December to February in the northeast. There are also short rainy seasons in other parts of the country. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 200
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 104,
+        "fields": {
+            "description": "The climate varies from region to region. Storms and flooding can occur throughout the country and at various times of the year. Flash storms can occur in Gauteng and North West provinces from November to April. There are heavy rains along the south coast from June to September and the Western Cape region receives heavy rainfall between May and September. Dirt roads can become hazardous during these periods. After heavy rains, do not attempt to cross low-lying river bridges by car or on foot, as there have been fatalities linked to people being washed down river. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 201
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 105,
+        "fields": {
+            "description": "Sandstorms occur, particularly from July to October. Expect difficulties travelling overland. Local services and the availability of water and basic food may be affected. Take preventive measures and exercise extreme caution.",
+            "country": 205
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 106,
+        "fields": {
+            "description": "The rainy seasons extend from May to August and from November to February. Heavy rains and flooding can occur. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 206
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 107,
+        "fields": {
+            "description": "The rainy season extends from October to April. Some roads may become hazardous during this period. You should keep informed of regional weather forecasts and plan accordingly.",
+            "country": 208
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 108,
+        "fields": {
+            "description": "Floods and windstorms occur periodically.",
+            "country": 209
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 109,
+        "fields": {
+            "description": "Avalanches present a risk year round in mountainous areas, where the weather can be unpredictable. Always carefully follow the advice of local authorities.Consult the Swiss Institute for Snow and Avalanche Research for weather and avalanche risk information.Heavy rains may occur in the spring and summer and may result in flooding.\u00a0",
+            "country": 210
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 110,
+        "fields": {
+            "description": "Syria is located in an active seismic zone. It also experiences dust sand storms.",
+            "country": 211
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 111,
+        "fields": {
+            "description": "Tajikistan is located in an active seismic zone.In higher-altitude areas, there is a significant danger of floods, avalanches and landslides, especially in the spring.",
+            "country": 213
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 112,
+        "fields": {
+            "description": "The rainy season extends from April to November. Heavy rains and flooding may cause significant damage to infrastructure, including roads and bridges. Some transportation routes may become impassable. You are advised to follow regional weather forecasts, avoid any unnecessary travel through affected regions and follow the advice of local authorities.During the dry season, and especially in the winter months from December to February, dry harmattan winds can reduce visibility in the north.",
+            "country": 217
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 113,
+        "fields": {
+            "description": "The Sahara can be very hot, especially in the summer, with temperatures well above 40\u00b0C. Dust storms and sand storms frequently occur.Although Tunisia is not in a high-risk earthquake zone, low seismic activity can occasionally occur. In winter, roads can be blocked by downpours.",
+            "country": 221
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 114,
+        "fields": {
+            "description": "Turkey is located in an active seismic zone. Landslides are possible in affected areas, and strong aftershocks may occur up to one week after the initial earthquake.Severe rainstorms can cause flooding and landslides, resulting in extensive damage to infrastructure and hampering the provision of essential services.Droughts, wildfires and snowstorms can also delay travel and disrupt essential services.",
+            "country": 222
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 115,
+        "fields": {
+            "description": "Uganda is located in a seismic zone. The rainy seasons extend from March to May and from October to November. Weather-related events such as floods and landslides occur throughout the country during these months. You should keep informed of regional weather forecasts and pay careful attention to all warnings issued. Avoid disaster areas and follow the advice of local authorities.",
+            "country": 226
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 116,
+        "fields": {
+            "description": "Forest fires can occur in eastern and southern Ukraine during the hottest summer months of July and August. In the event of a major fire, stay away from affected areas, follow the advice of local emergency services personnel, and monitor local media for up-to-date information. The air quality in areas near active fires may deteriorate due to heavy smoke and affect travellers with respiratory ailments. For assistance, contact the Embassy of Canada in Kyiv.",
+            "country": 227
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 117,
+        "fields": {
+            "description": "Flash floods occur in dry river canyons, most frequently in winter.Humidity and heat are highest during the hot season, from June to September.",
+            "country": 228
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 118,
+        "fields": {
+            "description": "England, Scotland and Wales are subject to wind storms that can cause death and injury and severely damage commercial, residential and natural areas. Heavy flooding, fog, rain and snow can have widespread impacts, including transportation disruptions. Consult the\u00a0Met Office, the\u00a0Environment Agency\u00a0or the\u00a0Scottish Environment Protection Agency\u00a0for additional information and advice.In mountainous regions, avalanches present a risk that may result in injuries or fatalities. If you are planning on mountaineering or skiing, consult the Scottish Avalanche Information Service\u00a0for information on weather and safety conditions.",
+            "country": 229
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 119,
+        "fields": {
+            "description": "Droughts and floods occur year round. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 232
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 120,
+        "fields": {
+            "description": "Uzbekistan is located in an active seismic zone.",
+            "country": 233
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 121,
+        "fields": {
+            "description": "The rainy season extends from December to April. Rural roads may become impassable during this period. You should follow regional weather forecasts and plan accordingly.",
+            "country": 242
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 122,
+        "fields": {
+            "description": "The rainy season extends from November to March. Keep informed of regional weather forecasts and plan accordingly.",
+            "country": 243
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 123,
+        "fields": {
+            "description": "Turkmenistan is located in an active seismic zone.Heavy rains may trigger floods and landslides.",
+            "country": 223
+        }
+    },
+    {
+        "model": "task_factory.climate",
+        "pk": 124,
+        "fields": {
+            "description": "Iran is located in an active seismic area. Be aware of appropriate steps to take in case of an earthquake. Transportation, health and telecommunications services may be affected, and land travel could be disrupted. Monitor local news reports, avoid disaster areas and follow the advice of local authorities.Dust storms and sand storms may occur in some areas.",
+            "country": 103
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$36000$24ICvyYDtkZ9$6Qbh4ShpefUfZjdtGa7GUp9yOw677HIwc5UF1oTycFs=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "cedric",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2017-12-06T09:27:26.322Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 18,
+        "fields": {
+            "password": "pbkdf2_sha256$36000$qI5T1jxTigOK$NYCzrU1/PT5Zw7gWk0HsqirMI/scsGYqMz0k8EdZkLM=",
+            "last_login": "2017-12-28T23:55:59.283Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@admin.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2017-12-13T09:57:53.104Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "ptc_api_back.profile",
+        "pk": 1,
+        "fields": {
+            "traveler": 1,
+            "nationalities": "",
+            "residence_country": "",
+            "birth_date": null,
+            "address": null,
+            "phone": null,
+            "visited_countries": null
+        }
+    },
+    {
+        "model": "ptc_api_back.profile",
+        "pk": 2,
+        "fields": {
+            "traveler": 18,
+            "nationalities": "",
+            "residence_country": "",
+            "birth_date": null,
+            "address": null,
+            "phone": null,
+            "visited_countries": null
         }
     },
     {
@@ -2046,7 +5405,6 @@
             "return_date_time": null
         }
     },
-
     {
         "model": "ptc_api_back.segment",
         "pk": 1,
@@ -2073,6 +5431,138 @@
             "arrival_airport": "HAN",
             "arrival_date_time": "2017-12-07T09:30:00Z",
             "order": 2
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 1,
+        "fields": {
+            "trip": 1,
+            "title": "Check Passport Validity Date",
+            "deadline": null,
+            "completed": false,
+            "comments": "Most of the time, your passport has to be valid at least for the three months following your departure.",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 2,
+        "fields": {
+            "trip": 1,
+            "title": "Vietnam's Visa Needed",
+            "deadline": null,
+            "completed": false,
+            "comments": "Contact the Ambassy of your destination country.",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 3,
+        "fields": {
+            "trip": 1,
+            "title": "Check vaccines for Vietnam",
+            "deadline": "2017-10-22",
+            "completed": false,
+            "comments": "Both required and advised vaccines !",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 4,
+        "fields": {
+            "trip": 1,
+            "title": "Check meteo",
+            "deadline": null,
+            "completed": false,
+            "comments": "Check weather conditions in Vietnam and prepare appropriate clothing",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 5,
+        "fields": {
+            "trip": 1,
+            "title": "Flight Must Have !",
+            "deadline": null,
+            "completed": false,
+            "comments": "Take your earplugs and your sleep mask for your flight",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 6,
+        "fields": {
+            "trip": 1,
+            "title": "Check your banking fees",
+            "deadline": null,
+            "completed": false,
+            "comments": "You should contact your bank account manager to ask the amount of banking fees you will have to pay when you will pay with your card or when you will use a cash machine.",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 7,
+        "fields": {
+            "trip": 1,
+            "title": "Check required insurance",
+            "deadline": null,
+            "completed": false,
+            "comments": "We got no information for your country, sorry !",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 8,
+        "fields": {
+            "trip": 1,
+            "title": "Check cabin baggage dimensions",
+            "deadline": null,
+            "completed": false,
+            "comments": "Ask your company website which size your cabin baggage can be.",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 9,
+        "fields": {
+            "trip": 1,
+            "title": "Labels on your baggages",
+            "deadline": null,
+            "completed": false,
+            "comments": "It really helps if your baggages are lost during the flight !",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 10,
+        "fields": {
+            "trip": 1,
+            "title": "Make copies of your pappers.",
+            "deadline": null,
+            "completed": false,
+            "comments": "Put one copy of your passport, your visa and your flight ticket in each luggage. Copy them on your smartphone and have them on the internet.",
+            "auto": true
+        }
+    },
+    {
+        "model": "ptc_api_back.task",
+        "pk": 11,
+        "fields": {
+            "trip": 1,
+            "title": "Long travel To-Do",
+            "deadline": null,
+            "completed": false,
+            "comments": "",
+            "auto": true
         }
     }
 ]

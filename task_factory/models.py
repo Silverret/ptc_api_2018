@@ -11,6 +11,8 @@ class Country(models.Model):
     """
     name = models.CharField(max_length=63)
     code = models.CharField(max_length=2)
+    advisory_state = models.PositiveSmallIntegerField(null=True, blank=True)
+    malaria_presence = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -26,3 +28,24 @@ class CountryUnion(models.Model):
 
     def __str__(self):
         return self.name
+
+class Vaccine(models.Model):
+    """
+    A Vaccine from Tugo API (see: URL in settings.py)
+    """
+    category = models.CharField(max_length=63)
+    description = models.TextField()
+    countries = models.ManyToManyField(Country, related_name='vaccines')
+
+    def __str__(self):
+        return self.category
+
+class Climate(models.Model):
+    """
+    Climate info from Tugo API (see: URL in settings.py)
+    """
+    description = models.TextField()
+    country = models.OneToOneField(Country, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.country.name
