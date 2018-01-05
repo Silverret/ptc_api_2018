@@ -105,6 +105,7 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     comments = models.TextField(null=True, blank=True)
     auto = models.BooleanField(default=False)
+    isVisible = models.BooleanField(default=True)
 
     def __str__(self):
         return f'{self.title} (Trip {self.trip.id}, auto = {self.auto})'
