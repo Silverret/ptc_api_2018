@@ -44,7 +44,7 @@ class TasksVieuTest(APITestCase):
         response = client.post(
             'http://localhost:8000/tasks/',
             json={
-                "trip": f"{trip_id}",
+                "trip": trip_id,
                 "title": "Test",
                 "deadline": None,
                 "completed": True,

@@ -24,7 +24,7 @@ class IsTripTravelerOrAdminUser(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method == 'POST':
             try:
-                assert re.match(r'^[0-9]+$', request.data['trip'])
+                assert type(request.data['trip']) is int
                 cor_trip_id = int(request.data['trip'])
                 cor_trip = Trip.objects.get(id=cor_trip_id)
                 return request.user == cor_trip.traveler
