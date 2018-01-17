@@ -52,7 +52,7 @@ class TaskViewSet(viewsets.ModelViewSet):
         We try to get the trip specified in the initial data
         """
         try:
-            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'].split("/")[-2])
+            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'])
         except Trip.DoesNotExist:
             cor_trip = Trip.objects.get(id=0)
 
@@ -79,7 +79,7 @@ class SegmentViewSet(viewsets.ModelViewSet):
         We try to get the trip specified in the initial data
         """
         try:
-            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'].split("/")[-2])
+            cor_trip = Trip.objects.get(id=serializer.initial_data['trip'])
         except Trip.DoesNotExist:
             cor_trip = Trip.objects.get(id=0)
 
