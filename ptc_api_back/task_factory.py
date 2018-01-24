@@ -4,7 +4,7 @@ This is the magic !
 In this module, we generate the specific required tasks for each trip !
 """
 from datetime import timedelta
-from task_factory.models import Country, Climate
+from ptc_api_back.models import Country, Climate
 
 
 class TaskFactory:

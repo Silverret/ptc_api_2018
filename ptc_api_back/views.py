@@ -9,12 +9,9 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.permissions import IsAuthenticated
 
-from ptc_api_back.models import Trip, Segment, Task, Profile
-from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer
+from ptc_api_back.models import Trip, Segment, Task, Profile, Country
+from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer, CountrySerializer
 from ptc_api_back.permissions import IsUserOrIsAdminUser, IsTravelerOrIsAdminUser, IsTripTravelerOrAdminUser
-
-from task_factory.models import Country
-from task_factory.serializers import CountrySerializer
 
 
 @api_view(['GET'])

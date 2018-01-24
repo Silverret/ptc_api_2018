@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
 from django.contrib.auth.models import User
 
-from ptc_api_back.models import Trip, Segment, Task, Profile
+from ptc_api_back.models import Trip, Segment, Task, Profile, Country
 
 
 
@@ -74,3 +74,10 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
             'return_date_time',
             'segments'
         )
+
+class CountrySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Country
+        fields = ('name', 'code')
+        read_only_fields = ('id', 'name', 'code',)

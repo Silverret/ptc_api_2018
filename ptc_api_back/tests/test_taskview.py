@@ -3,12 +3,12 @@ API Test Case - Interaction with Task ViewSet.
 """
 from datetime import datetime
 
-# from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 
 from rest_framework.test import APITestCase
 from rest_framework.test import RequestsClient
+from rest_framework import status
 from rest_framework.authtoken.models import Token
 
 from ptc_api_back.models import Trip
@@ -35,12 +35,16 @@ class TasksVieuTest(APITestCase):
             arrival_airport="PIA",
             arrival_date_time=datetime(2018, month=1, day=18, hour=18, minute=30, tzinfo=self.tz))
 
-    def test_post(self):
+    def test_post0(self):
+        """
+        Ensure a User can POST a custom Task on one of its trips.
+        """
         token = Token.objects.get(user__username='lauren')
         client = RequestsClient()
         client.headers.update({"Authorization": f'Token {token.key}'})
 
         trip_id = self.test_trip.id
+        old_tasks_count = self.test_trip.tasks.count()
         response = client.post(
             'http://localhost:8000/tasks/',
             json={
@@ -54,4 +58,62 @@ class TasksVieuTest(APITestCase):
             },
             headers={"Content-Type": 'application/json'})
 
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(
+            self.test_trip.tasks.count(),
+            old_tasks_count+1)
+
+    def test_post1(self):
+        """
+        Ensure an Anonymous User can NOT POST a custom Task .
+        """
+        client = RequestsClient()
+
+        trip_id = self.test_trip.id
+        old_tasks_count = self.test_trip.tasks.count()
+        response = client.post(
+            'http://localhost:8000/tasks/',
+            json={
+                "trip": trip_id,
+                "title": "Test",
+                "deadline": None,
+                "completed": True,
+                "comments": "ceci est un test",
+                "auto": True,
+                "isVisible": True
+            },
+            headers={"Content-Type": 'application/json'})
+
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(
+            self.test_trip.tasks.count(),
+            old_tasks_count)
+
+    def test_post2(self):
+        """
+        Ensure an User can NOT POST a custom Task on a trip he doesn't own.
+        """
+        test_user2 = User.objects.create_user("loic", "secret")
+        token = Token.objects.get(user__username='loic')
+        client = RequestsClient()
+        client.headers.update({"Authorization": f'Token {token.key}'})
+
+        trip_id = self.test_trip.id
+        old_tasks_count = self.test_trip.tasks.count()
+        response = client.post(
+            'http://localhost:8000/tasks/',
+            json={
+                "trip": trip_id,
+                "title": "Test",
+                "deadline": None,
+                "completed": True,
+                "comments": "ceci est un test",
+                "auto": True,
+                "isVisible": True
+            },
+            headers={"Content-Type": 'application/json'})
+
+        self.assertEqual(response.status_code, 403)
+        self.assertEqual(
+            self.test_trip.tasks.count(),
+            old_tasks_count)
