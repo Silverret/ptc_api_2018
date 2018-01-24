@@ -121,7 +121,7 @@ class TaskFactory:
         if bool(vaccines):
             content = ""
             for vaccine in vaccines:
-                content += f"{vaccine.category}\n"
+                content += "\t- "+vaccine.category+"\n"
             self.tasks.append(self.trip.tasks.create(
                 title="Check your vaccines (+)",
                 comments=comments,
