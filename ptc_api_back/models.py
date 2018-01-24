@@ -133,6 +133,11 @@ class Country(models.Model):
 class CountryUnion(models.Model):
     """
     A Union of Country has specific visa policies
+    
+    name : (str) name of the Union.
+    t_visa_between_members : (bool) True if a transport visa is needed for flight inside the union
+    common_visa : (bool) True if there is a Union Visa available.
+    countries : (list) of countries included in this union. 
     """
     name = models.CharField(max_length=63)
     t_visa_between_members = models.BooleanField()

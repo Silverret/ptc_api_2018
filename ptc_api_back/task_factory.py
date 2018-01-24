@@ -62,9 +62,6 @@ class TaskFactory:
         return self.tasks
 
     def create_passport_task(self):
-        """
-        Voir Donnée non formatée de l'année dernière IATA github !
-        """
         self.tasks.append(self.trip.tasks.create(
             title="Check Passport Validity Date",
             comments="Most of the time, your passport has to be valid " +\
@@ -74,14 +71,18 @@ class TaskFactory:
     def create_visa_task(self):
         if not bool(self.d_country) or not bool(self.a_country):
             self.tasks.append(self.trip.tasks.create(
-                title="Visa may be needed.",
+                title="Visa may be needed",
                 comments="We don't have your country in our base, " +\
-                "retry with its name in English please."
-            ))
+                "retry with its name in English please."))
             return
 
         d_country = self.d_country
         a_country = self.a_country
+
+        if d_country is a_country:
+            self.tasks.append(self.trip.tasks.create(
+                title="No Visa needed"))
+            return
 
         common_unions = set()
         for union in d_country.countryunion_set.all():
@@ -91,16 +92,21 @@ class TaskFactory:
         if bool(common_unions):
             for union in common_unions:
                 if not union.t_visa_between_members:
-                    self.tasks.append(self.trip.tasks.create(title="No Visa Needed"))
+                    self.tasks.append(self.trip.tasks.create(title="No Visa needed"))
+                    return
 
-        for union in a_country.countryunion_set.all():
-            if union.common_visa:
-                self.tasks.append(self.trip.tasks.create(
-                    title=union.name + "Visa or"
-                ))
+        common_visa_unions = a_country.countryunion_set.filter(common_visa=True)
+        if common_visa_unions:
+            str_visa_list = ""
+            for union in common_visa_unions:
+                str_visa_list += "\n\t- "+union.name+""'s Visa'
+            self.tasks.append(self.trip.tasks.create(
+                title="A Visa is needed (+)",
+                comments="You have the choice between :" + str_visa_list))
+            return
 
         self.tasks.append(self.trip.tasks.create(
-            title=a_country.name + "'s Visa Needed",
+            title=a_country.name + "'s Visa needed",
             comments="Contact the Ambassy of your destination country."
         ))
 
@@ -134,7 +140,7 @@ class TaskFactory:
         """
         if self.a_country.malaria_presence:
             self.tasks.append(self.trip.tasks.create(
-                title="Protection for mosquito bites",
+                title="Protection against mosquitoes",
                 comments="insect repellent, insecticide-treated bednet, pre-treating clothing, ..."
             ))
 
@@ -184,7 +190,7 @@ class TaskFactory:
         level = self.a_country.advisory_state
         if not level is None:
             self.tasks.append(self.trip.tasks.create(
-                title="Check rapatriation insurance",
+                title="Check repatriation insurance",
                 comments="It seems to be recommended for this country !" if level > 0\
                     else "Not really required but if you need this to relax yourself, go on :-)"
             ))
@@ -212,7 +218,7 @@ class TaskFactory:
 
     def create_long_travel_task(self):
         """
-        TODO
+        #TODO
         """
         self.tasks.append(self.trip.tasks.create(
             title="Long travel To-Do",
