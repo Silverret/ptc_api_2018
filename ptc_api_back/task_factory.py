@@ -125,8 +125,8 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check your vaccines (+)",
                 comments=comments,
-                deadline=self.trip.departure_date_time - timedelta(days=45)
-            ))
+                deadline=self.trip.departure_date_time - timedelta(days=45)))
+            return
 
         self.tasks.append(self.trip.tasks.create(
             title="Check vaccines for " + self.trip.arrival_country,
