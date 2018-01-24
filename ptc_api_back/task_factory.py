@@ -119,12 +119,12 @@ class TaskFactory:
         comments = ""
         vaccines = self.a_country.vaccines.all()
         if bool(vaccines):
-            content = ""
+            comments = ""
             for vaccine in vaccines:
-                content += "\t- "+vaccine.category+"\n"
+                comments += "\t- "+vaccine.category+"\n"
             self.tasks.append(self.trip.tasks.create(
                 title="Check your vaccines (+)",
-                comments=comments,
+                comments=comments[:-1],
                 deadline=self.trip.departure_date_time - timedelta(days=45)))
             return
 

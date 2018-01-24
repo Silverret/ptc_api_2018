@@ -22,7 +22,7 @@ class TaskFactoryTest(APITestCase):
     Remaining method to test :
         - create_vaccine_task : ?
         - create_weather_task : ?
-        - create_insurance_task : 3 tests needed
+        - create_insurance_task : 3 tests needed (0 done)
     """
 
     def setUp(self):
@@ -33,6 +33,7 @@ class TaskFactoryTest(APITestCase):
         - 2 Countries
         - 1 CountryUnion
         - 4 Trips
+        - 1 Vaccine
         """
         self.tz = timezone.now().tzinfo
         self.test_user = User.objects.create_user("lauren", "secret")
@@ -90,6 +91,11 @@ class TaskFactoryTest(APITestCase):
             arrival_country="France",
             arrival_airport="CDG",
             arrival_date_time=datetime(2018, month=1, day=2, hour=7, minute=30, tzinfo=self.tz))
+
+        self.test_country2.vaccines.create(
+            category="Routine Vaccines",
+            description="Routine Vaccines"
+        )
 
 
     def test_create_passport_task0(self):
@@ -258,3 +264,21 @@ class TaskFactoryTest(APITestCase):
             tested_task.comments,
             "Take some food and some drinks for your flight")
 
+    def test_create_vaccines_task0(self):
+        """
+        Ensure the TaskFactory generate the correct vaccines task for trip1.
+        """
+        self.test_tf.trip = self.test_trip1
+        self.test_tf.d_country = self.test_country1
+        self.test_tf.a_country = self.test_country2
+
+        self.assertEqual(len(self.test_tf.tasks), 0)
+
+        self.test_tf.create_vaccines_task()
+
+        self.assertEqual(len(self.test_tf.tasks), 1)
+        
+        tested_task = self.test_tf.tasks[0]
+        self.assertEqual(
+            tested_task.comments,
+            "\t- Routine Vaccines")
