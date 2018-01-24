@@ -131,8 +131,7 @@ class TaskFactory:
         self.tasks.append(self.trip.tasks.create(
             title="Check vaccines for " + self.trip.arrival_country,
             comments="Both required and advised vaccines !",
-            deadline=self.trip.departure_date_time - timedelta(days=45)
-        ))
+            deadline=self.trip.departure_date_time - timedelta(days=45)))
 
     def create_malaria_task(self):
         """
