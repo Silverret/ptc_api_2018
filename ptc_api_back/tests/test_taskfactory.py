@@ -18,9 +18,9 @@ class TaskFactoryTest(APITestCase):
         - create_visa_task : 5 tests
         - create_malaria_tak : 2 tests
         - create_flight_needs_task : 2 tests
-    
+
     Remaining method to test :
-        - create_vaccine_task : ?
+        - create_vaccine_task : 2 tests needed at least (1 done)
         - create_weather_task : ?
         - create_insurance_task : 3 tests needed (0 done)
     """
@@ -196,7 +196,7 @@ class TaskFactoryTest(APITestCase):
         self.assertEqual(len(self.test_tf.tasks), 1)
 
         visa_task = self.test_tf.tasks[0]
-        self.assertEqual(visa_task.title, "A Visa is needed (+)")
+        self.assertEqual(visa_task.title, "A Visa is needed")
 
     def test_create_malaria_task0(self):
         """

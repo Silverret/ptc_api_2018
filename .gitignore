@@ -36,6 +36,10 @@ task_factory/migrations/*
 *.sqlite3
 *.xml
 
+# IDEs #
+######################
+*.vscode
+
 # OS generated files #
 ######################
 .DS_Store

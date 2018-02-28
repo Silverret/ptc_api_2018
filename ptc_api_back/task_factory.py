@@ -101,7 +101,7 @@ class TaskFactory:
             for union in common_visa_unions:
                 str_visa_list += "\n\t- "+union.name+""'s Visa'
             self.tasks.append(self.trip.tasks.create(
-                title="A Visa is needed (+)",
+                title="A Visa is needed",
                 comments="You have the choice between :" + str_visa_list))
             return
 
@@ -112,9 +112,7 @@ class TaskFactory:
 
     def create_vaccines_task(self):
         """
-        Call the API of TuGo
-        https://api.tugo.com/v1/travelsafe/countries/[CodeCountry]
-        headers must contain : "X-Auth-API-Key":"jttuskf9wetdbzspvtt6kagb"
+        #TODO
         """
         comments = ""
         vaccines = self.a_country.vaccines.all()
@@ -123,7 +121,7 @@ class TaskFactory:
             for vaccine in vaccines:
                 comments += "\t- "+vaccine.category+"\n"
             self.tasks.append(self.trip.tasks.create(
-                title="Check your vaccines (+)",
+                title="Check your vaccines",
                 comments=comments[:-1],
                 deadline=self.trip.departure_date_time - timedelta(days=45)))
             return
@@ -191,7 +189,7 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check repatriation insurance",
                 comments="It seems to be recommended for this country !" if level > 0\
-                    else "Not really required but if you need this to relax yourself, go on :-)"
+                    else "Not really required but if you need this to relax, go on :-)"
             ))
         else:
             self.tasks.append(self.trip.tasks.create(
