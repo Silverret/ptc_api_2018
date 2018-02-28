@@ -24,11 +24,12 @@ class IsTripTravelerOrAdminUser(permissions.BasePermission):
     def has_permission(self, request, view):
         if request.method == 'POST':
             try:
-                assert type(request.data['trip']) is int
+                if not bool((re.match(r'^[0-9]+$', request.data['trip']))):
+                    raise ValueError
                 cor_trip_id = int(request.data['trip'])
                 cor_trip = Trip.objects.get(id=cor_trip_id)
                 return request.user == cor_trip.traveler
-            except (KeyError, ValueError, AssertionError):
+            except (KeyError, ValueError):
                 return False
         # For the other methods (GET, PUT, DELETE, ...)
         return request.user and (request.user.is_staff or request.user.is_authenticated)

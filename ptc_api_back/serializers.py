@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
 from django.contrib.auth.models import User
 
-from ptc_api_back.models import Trip, Segment, Task, Profile, Country
+from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
 
 
 
@@ -81,3 +81,12 @@ class CountrySerializer(serializers.ModelSerializer):
         model = Country
         fields = ('name', 'code')
         read_only_fields = ('id', 'name', 'code',)
+
+class AirportSerializer(serializers.HyperlinkedModelSerializer):
+    country = serializers.HyperlinkedRelatedField(
+        many=False, read_only=True, view_name='country-detail')
+
+    class Meta:
+        model = Airport
+        fields = ('code', 'name', 'city', 'country')
+        read_only_fields = ('id', 'code', 'name', 'city', 'country')

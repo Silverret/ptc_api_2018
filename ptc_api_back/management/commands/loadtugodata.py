@@ -2,7 +2,7 @@ import time
 import requests
 from django.core.management.base import BaseCommand
 from ptc_api import settings
-from task_factory.models import Country, Vaccine, Climate
+from ptc_api_back.models import Country, Vaccine, Climate
 
 
 class Command(BaseCommand):

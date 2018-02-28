@@ -117,7 +117,6 @@ The models used in the TaskFactory :
 Country
 """
 
-
 class Country(models.Model):
     """
     A really simplist country model.
@@ -146,6 +145,19 @@ class CountryUnion(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Airport(models.Model):
+    """
+    A really simplist aeroport model.
+    """
+    name = models.CharField(max_length=63, null=True, blank=True)
+    code = models.CharField(max_length=3)
+    city = models.CharField(max_length=63)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='country')
+
+    def __str__(self):
+        return f'{self.code}, city: {self.city}'
 
 class Vaccine(models.Model):
     """

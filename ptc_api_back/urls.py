@@ -12,6 +12,7 @@ router.register(r'trips', views.TripViewSet)
 router.register(r'segments', views.SegmentViewSet)
 router.register(r'tasks', views.TaskViewSet)
 router.register(r'countries', views.CountryListViewSet)
+router.register(r'airports', views.AirportListViewSet)
 
 # The API URLs are now determined automatically by the router.
 # Additionally, we include the login URLs for the browsable API.

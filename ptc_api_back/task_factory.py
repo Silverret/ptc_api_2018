@@ -65,15 +65,15 @@ class TaskFactory:
         self.tasks.append(self.trip.tasks.create(
             title="Check Passport Validity Date",
             comments="Most of the time, your passport has to be valid " +\
-            "at least for the three months following your departure."
+            "at least three months after your departure."
         ))
 
     def create_visa_task(self):
         if not bool(self.d_country) or not bool(self.a_country):
             self.tasks.append(self.trip.tasks.create(
                 title="Visa may be needed",
-                comments="We don't have your country in our base, " +\
-                "retry with its name in English please."))
+                comments="Sorry, we don't have your country in our database, " +\
+                "please, make sure its name has been correctly entered."))
             return
 
         d_country = self.d_country
@@ -81,7 +81,7 @@ class TaskFactory:
 
         if d_country is a_country:
             self.tasks.append(self.trip.tasks.create(
-                title="No Visa needed"))
+                title="No Visa is needed for this country."))
             return
 
         common_unions = set()
@@ -92,7 +92,7 @@ class TaskFactory:
         if bool(common_unions):
             for union in common_unions:
                 if not union.t_visa_between_members:
-                    self.tasks.append(self.trip.tasks.create(title="No Visa needed"))
+                    self.tasks.append(self.trip.tasks.create(title="No Visa is needed for this country."))
                     return
 
         common_visa_unions = a_country.countryunion_set.filter(common_visa=True)
@@ -107,7 +107,7 @@ class TaskFactory:
 
         self.tasks.append(self.trip.tasks.create(
             title=a_country.name + "'s Visa needed",
-            comments="Contact the Ambassy of your destination country."
+            comments="Contact the Ambassy of the destination country."
         ))
 
     def create_vaccines_task(self):
@@ -121,7 +121,7 @@ class TaskFactory:
             for vaccine in vaccines:
                 comments += "\t- "+vaccine.category+"\n"
             self.tasks.append(self.trip.tasks.create(
-                title="Check your vaccines",
+                title="Check vaccines",
                 comments=comments[:-1],
                 deadline=self.trip.departure_date_time - timedelta(days=45)))
             return
@@ -138,7 +138,7 @@ class TaskFactory:
         if self.a_country.malaria_presence:
             self.tasks.append(self.trip.tasks.create(
                 title="Protection against mosquitoes",
-                comments="insect repellent, insecticide-treated bednet, pre-treating clothing, ..."
+                comments="Insect repellent, insecticide-treated bednet and pre-treating clothing"
             ))
 
     def create_weather_task(self):
@@ -149,7 +149,7 @@ class TaskFactory:
         try:
             climate = Climate.objects.get(country=self.a_country)
             self.tasks.append(self.trip.tasks.create(
-                title=f"Check climate in {self.a_country.name} (+)",
+                title=f"Check climate in {self.a_country.name}",
                 comments=climate.description
             ))
         except (Climate.DoesNotExist, Country.DoesNotExist):
@@ -167,7 +167,7 @@ class TaskFactory:
         if duration > timedelta(hours=2):
             self.tasks.append(self.trip.tasks.create(
                 title="Flight Must Have !",
-                comments="Take your earplugs and your sleep mask for your flight"
+                comments="It's a long flight ! Don't forget your earplugs and your sleep mask. "
             ))
         else:
             self.tasks.append(self.trip.tasks.create(
@@ -178,9 +178,9 @@ class TaskFactory:
     def create_banking_task(self):
         self.tasks.append(self.trip.tasks.create(
             title="Check your banking fees",
-            comments="You should contact your bank account manager " +\
-            "to ask the amount of banking fees you will have to pay " +\
-            "when you will pay with your card or when you will use a cash machine."
+            comments="Contact your bank account manager " +\
+            "to ask him about the amount of banking fees you will have to pay " +\
+            "when you use your credit card at the destination."
         ))
 
     def create_insurance_task(self):
@@ -189,7 +189,7 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check repatriation insurance",
                 comments="It seems to be recommended for this country !" if level > 0\
-                    else "Not really required but if you need this to relax, go on :-)"
+                    else "Not absolutely required but if you need this to relax, go on :-)"
             ))
         else:
             self.tasks.append(self.trip.tasks.create(
@@ -200,7 +200,7 @@ class TaskFactory:
     def create_systematic_tasks(self):
         self.tasks.append(self.trip.tasks.create(
             title="Check cabin baggage dimensions",
-            comments="Ask your company website which size your cabin baggage can be."
+            comments="Check what are the maximum dimensions of baggages allowed on board."
         ))
         self.tasks.append(self.trip.tasks.create(
             title="Labels on your baggages",
@@ -208,9 +208,8 @@ class TaskFactory:
         ))
         self.tasks.append(self.trip.tasks.create(
             title="Make copies of your pappers.",
-            comments="Put one copy of your passport, " +\
-            "your visa and your flight ticket in each luggage. " +\
-            "Copy them on your smartphone and have them on the internet."
+            comments="Make sure you have duplicates of your visa and your passport. " +\
+            "Save them on your smartphone or have them retrievable from the internet."
         ))
 
     def create_long_travel_task(self):

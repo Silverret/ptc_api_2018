@@ -1,6 +1,8 @@
 """
 Viewsets of the API are defined here
 """
+import re
+
 from django.contrib.auth.models import User
 
 from rest_framework import permissions, viewsets
@@ -9,24 +11,9 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.permissions import IsAuthenticated
 
-from ptc_api_back.models import Trip, Segment, Task, Profile, Country
-from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer, CountrySerializer
+from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
+from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer, CountrySerializer, AirportSerializer
 from ptc_api_back.permissions import IsUserOrIsAdminUser, IsTravelerOrIsAdminUser, IsTripTravelerOrAdminUser
-
-
-@api_view(['GET'])
-@permission_classes((permissions.AllowAny, ))
-def api_root(request, format=None):
-    """
-    Default route, presents every viewsets available
-    """
-    return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'profiles': reverse('profile-list', request=request, format=format),
-        'trips': reverse('trip-list', request=request, format=format),
-        'segments': reverse('segment-list', request=request, format=format),
-        'tasks': reverse('task-list', request=request, format=format)
-    })
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -162,4 +149,38 @@ class CountryListViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
     permission_classes = [IsAuthenticated]
+
+class AirportListViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Airport.objects.all()
+    serializer_class = AirportSerializer
+    permission_classes = [IsAuthenticated]
+
+    # Overriding of a List/RetrieveMixins method
+    def get_queryset(self):
+        """
+        Optionally restricts the returned waiting times to a given location,
+        by filtering against a `location` query parameter in the URL.
+        """
+        country = self.request.query_params.get('country', None)
+        if country is not None and bool((re.match(r'^[0-9]+$', country))):
+            queryset = Airport.objects.filter(country=country)
+            return queryset
+        return None
+    
+    # Overriding of a List/RetrieveMixins method
+    def list(self, request, *args, **kwargs):
+        """
+        If the user provided no parameters, we signal him to retry with mandatory parameters
+        """
+        queryset = self.filter_queryset(self.get_queryset())
+        if queryset is None:
+            return Response({"Warning": "Don't forget the country parameter in your url, example: /airport/?country=1"})
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
     
