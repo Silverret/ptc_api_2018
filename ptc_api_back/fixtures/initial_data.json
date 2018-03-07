@@ -53,7 +53,7 @@
         "model": "ptc_api_back.country",
         "pk": 6,
         "fields": {
-            "name": "AndorrA",
+            "name": "Andorra",
             "code": "AD",
             "advisory_state": 0,
             "malaria_presence": true
@@ -735,6 +735,7 @@
         "fields": {
             "name": "France",
             "code": "FR",
+            "image": "country/paris.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
@@ -5396,10 +5397,10 @@
         "pk": 1,
         "fields": {
             "traveler": 1,
-            "departure_country": "France",
+            "departure_country": 74,
             "departure_airport": "CDG",
             "departure_date_time": "2017-12-06T18:00:00Z",
-            "arrival_country": "Vietnam",
+            "arrival_country": 236,
             "arrival_airport": "HAN",
             "arrival_date_time": "2017-12-07T09:30:00Z",
             "return_date_time": null
@@ -5410,10 +5411,10 @@
         "pk": 1,
         "fields": {
             "trip": 1,
-            "departure_country": "France",
+            "departure_country": 74,
             "departure_airport": "CDG",
             "departure_date_time": "2017-12-06T18:00:00Z",
-            "arrival_country": "United Arab Emirates",
+            "arrival_country": 228,
             "arrival_airport": "DXB",
             "arrival_date_time": "2017-12-07T03:30:00Z",
             "order": 1
@@ -5424,10 +5425,10 @@
         "pk": 2,
         "fields": {
             "trip": 1,
-            "departure_country": "United Arab Emirates",
+            "departure_country": 228,
             "departure_airport": "DXB",
             "departure_date_time": "2017-12-07T07:30:00Z",
-            "arrival_country": "Vietnam",
+            "arrival_country": 236,
             "arrival_airport": "HAN",
             "arrival_date_time": "2017-12-07T09:30:00Z",
             "order": 2

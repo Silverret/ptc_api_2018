@@ -12,8 +12,9 @@ from rest_framework.reverse import reverse
 from rest_framework.permissions import IsAuthenticated
 
 from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
-from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer, TaskSerializer, CountrySerializer, AirportSerializer
 from ptc_api_back.permissions import IsUserOrIsAdminUser, IsTravelerOrIsAdminUser, IsTripTravelerOrAdminUser
+from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer
+from ptc_api_back.serializers import TaskSerializer, CountrySerializer, AirportSerializer
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -86,7 +87,17 @@ class TripViewSet(viewsets.ModelViewSet):
         return Trip.objects.filter(traveler=user)
 
     def perform_create(self, serializer):
-        serializer.save(traveler=self.request.user)
+        d_country = self.request.data['departure_country']
+        a_country = self.request.data['arrival_country']
+        if not bool(re.match(r'^[A-Z]{2}$', d_country)):
+            return
+        if not bool(re.match(r'^[A-Z]{2}$', a_country)):
+            return
+        
+        serializer.save(
+            traveler=self.request.user,
+            departure_country=Country.objects.get(code=d_country),
+            arrival_country=Country.objects.get(code=a_country))
 
     @detail_route(methods=['GET'])
     def generate_tasks(self, request, *args, **kwargs):
@@ -145,7 +156,7 @@ class UserViewSet(viewsets.ModelViewSet):
         return User.objects.filter(id=user.id)
 
 
-class CountryListViewSet(viewsets.ReadOnlyModelViewSet):
+class CountryListViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
     permission_classes = [IsAuthenticated]
@@ -183,4 +194,3 @@ class AirportListViewSet(viewsets.ReadOnlyModelViewSet):
 
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
-    

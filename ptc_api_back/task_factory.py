@@ -12,42 +12,28 @@ class TaskFactory:
     Factory class designed to help create various tasks.
     """
 
-    def __init__(self, **kwargs):
-        self.trip = kwargs['trip'] if 'trip' in kwargs else None
+    def __init__(self, trip):
+        self.trip = trip
+        self.d_country = self.trip.departure_country
+        self.a_country = self.trip.arrival_country
         self.tasks = []
-        self.a_country = None
-        self.d_country = None
 
     def create_tasks(self):
         """
         Call the task_factory method to create the differents tasks.
         """
-        try:
-            self.a_country = Country.objects.get(
-                name=self.trip.arrival_country)
-        except Country.DoesNotExist:
-            pass
-
-        try:
-            self.d_country = Country.objects.get(
-                name=self.trip.departure_country)
-        except Country.DoesNotExist:
-            pass
-
         self.create_passport_task()
 
         self.create_visa_task()
 
-        if bool(self.a_country):
-            self.create_vaccines_task()
-            self.create_malaria_task()
+        self.create_vaccines_task()
+        self.create_malaria_task()
 
         self.create_weather_task()
         self.create_flight_needs_task()
         self.create_banking_task()
 
-        if bool(self.a_country):
-            self.create_insurance_task()
+        self.create_insurance_task()
 
         self.create_systematic_tasks()  # 3 tasks
 
@@ -69,24 +55,15 @@ class TaskFactory:
         ))
 
     def create_visa_task(self):
-        if not bool(self.d_country) or not bool(self.a_country):
-            self.tasks.append(self.trip.tasks.create(
-                title="Visa may be needed",
-                comments="Sorry, we don't have your country in our database, " +\
-                "please, make sure its name has been correctly entered."))
-            return
 
-        d_country = self.d_country
-        a_country = self.a_country
-
-        if d_country is a_country:
+        if self.d_country is self.a_country:
             self.tasks.append(self.trip.tasks.create(
                 title="No Visa is needed for this country."))
             return
 
         common_unions = set()
-        for union in d_country.countryunion_set.all():
-            if bool(union.countries.filter(id=a_country.id)):
+        for union in self.d_country.countryunion_set.all():
+            if bool(union.countries.filter(id=self.a_country.id)):
                 common_unions.add(union)
 
         if bool(common_unions):
@@ -95,7 +72,7 @@ class TaskFactory:
                     self.tasks.append(self.trip.tasks.create(title="No Visa is needed for this country."))
                     return
 
-        common_visa_unions = a_country.countryunion_set.filter(common_visa=True)
+        common_visa_unions = self.a_country.countryunion_set.filter(common_visa=True)
         if common_visa_unions:
             str_visa_list = ""
             for union in common_visa_unions:
@@ -106,7 +83,7 @@ class TaskFactory:
             return
 
         self.tasks.append(self.trip.tasks.create(
-            title=a_country.name + "'s Visa needed",
+            title=self.a_country.name + "'s Visa needed",
             comments="Contact the Ambassy of the destination country."
         ))
 
@@ -127,7 +104,7 @@ class TaskFactory:
             return
 
         self.tasks.append(self.trip.tasks.create(
-            title="Check vaccines for " + self.trip.arrival_country,
+            title="Check vaccines for " + self.a_country.name,
             comments="Both required and advised vaccines !",
             deadline=self.trip.departure_date_time - timedelta(days=45)))
 
@@ -156,7 +133,7 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check meteo",
                 comments="Check weather conditions in " +
-                self.trip.arrival_country + " and prepare appropriate clothing"
+                self.a_country.name + " and prepare appropriate clothing"
             ))
 
     def create_flight_needs_task(self):

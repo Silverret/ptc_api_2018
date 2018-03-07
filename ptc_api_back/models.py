@@ -5,6 +5,20 @@ Profile, Trip, Segment, Task
 from django.db import models
 from django.contrib.auth.models import User
 
+from ptc_api import settings
+
+class Country(models.Model):
+    """
+    A really simplist country model.
+    """
+    name = models.CharField(max_length=63)
+    code = models.CharField(max_length=2)
+    image = models.FileField(max_length=255, upload_to=f'country', null=True)
+    advisory_state = models.PositiveSmallIntegerField(null=True, blank=True)
+    malaria_presence = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
 
 class Profile(models.Model):
     """
@@ -23,7 +37,6 @@ class Profile(models.Model):
         return f'{self.traveler.username}'
 
 
-
 class Trip(models.Model):
     """
     The Trip class represents a whole trip, from a beginning point to an end.
@@ -31,10 +44,10 @@ class Trip(models.Model):
     """
     traveler = models.ForeignKey(User, related_name='trips', on_delete=models.CASCADE)
 
-    departure_country = models.CharField(max_length=255)
+    departure_country = models.ForeignKey(Country, related_name='departures', on_delete=models.CASCADE)
     departure_airport = models.CharField(max_length=3)
     departure_date_time = models.DateTimeField()
-    arrival_country = models.CharField(max_length=255)
+    arrival_country = models.ForeignKey(Country, related_name='arrivals', on_delete=models.CASCADE)
     arrival_airport = models.CharField(max_length=3)
     arrival_date_time = models.DateTimeField()
     return_date_time = models.DateTimeField(null=True, blank=True)
@@ -116,18 +129,6 @@ class Task(models.Model):
 The models used in the TaskFactory :
 Country
 """
-
-class Country(models.Model):
-    """
-    A really simplist country model.
-    """
-    name = models.CharField(max_length=63)
-    code = models.CharField(max_length=2)
-    advisory_state = models.PositiveSmallIntegerField(null=True, blank=True)
-    malaria_presence = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.name
 
 class CountryUnion(models.Model):
     """

@@ -132,6 +132,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # External API calls
 EXTERNAL_API_URLS = {'tugo': 'https://api.tugo.com/v1/travelsafe/countries/'}
 EXERNAL_API_HEADERS = {'tugo' : {"X-Auth-API-Key":"jttuskf9wetdbzspvtt6kagb"}}

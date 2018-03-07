@@ -5,6 +5,13 @@ from django.contrib.auth.models import User
 from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
 
 
+class CountrySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Country
+        fields = ('name', 'code', 'image')
+        read_only_fields = ('id', 'name', 'code')
+
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
     trip = serializers.PrimaryKeyRelatedField(read_only=True)
@@ -13,7 +20,6 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
         model = Task
         fields = '__all__'
         read_only = ('id', 'auto')
-
 
 
 class SegmentSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,8 +31,7 @@ class SegmentSerializer(serializers.HyperlinkedModelSerializer):
         validators = [
             UniqueTogetherValidator(
                 queryset=Segment.objects.all(),
-                fields=('order', 'trip')
-            )
+                fields=('order', 'trip'))
         ]
 
 
@@ -63,24 +68,16 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
         many=False, view_name='user-detail', read_only=True)
     segments = serializers.HyperlinkedRelatedField(
         many=True, read_only=True, view_name='segment-detail')
+    departure_country = CountrySerializer(many=False, read_only=True)
+    arrival_country = CountrySerializer(many=False, read_only=True)
 
     class Meta:
         model = Trip
         fields = (
-            'id',
-            'traveler',
+            'id', 'traveler',
             'departure_airport', 'departure_country', 'departure_date_time',
             'arrival_airport', 'arrival_country', 'arrival_date_time',
-            'return_date_time',
-            'segments'
-        )
-
-class CountrySerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Country
-        fields = ('name', 'code')
-        read_only_fields = ('id', 'name', 'code',)
+            'return_date_time','segments')
 
 class AirportSerializer(serializers.HyperlinkedModelSerializer):
     country = serializers.HyperlinkedRelatedField(
