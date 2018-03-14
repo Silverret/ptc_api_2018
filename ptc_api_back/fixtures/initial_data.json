@@ -5,6 +5,7 @@
         "fields": {
             "name": "Afghanistan",
             "code": "AF",
+			"image": "country/afghanistan.jpg",
             "advisory_state": 3,
             "malaria_presence": true
         }
@@ -445,6 +446,7 @@
         "fields": {
             "name": "China",
             "code": "CN",
+			"image": "country/china.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
@@ -1076,6 +1078,7 @@
         "fields": {
             "name": "Italy",
             "code": "IT",
+			"image": "country/roma.jpg",
             "advisory_state": 0,
             "malaria_presence": true
         }
@@ -1416,6 +1419,7 @@
         "fields": {
             "name": "Mexico",
             "code": "MX",
+			"image": "country/mexico.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
@@ -1806,6 +1810,7 @@
         "fields": {
             "name": "Russian Federation",
             "code": "RU",
+			"image": "country/russia.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
@@ -2286,6 +2291,7 @@
         "fields": {
             "name": "United Kingdom",
             "code": "GB",
+			"image": "country/london.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
@@ -2356,6 +2362,7 @@
         "fields": {
             "name": "Vietnam",
             "code": "VN",
+			"image": "country/vietnam.jpg",
             "advisory_state": 1,
             "malaria_presence": true
         }
