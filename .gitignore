@@ -1,5 +1,7 @@
 # Migrations #
 ##############
+
+ptc_api_back/__pycache__/*
 ptc_api_back/migrations/*
 !ptc_api_back/migrations/__init__.py
 task_factory/migrations/*
