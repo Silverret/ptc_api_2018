@@ -37,8 +37,7 @@ class TaskFactoryTest(APITestCase):
         """
         self.tz = timezone.now().tzinfo
         self.test_user = User.objects.create_user("lauren", "secret")
-        self.test_tf = TaskFactory()
-
+        self.tf = None
         self.test_country1 = Country.objects.create(
             name="France",
             code="FR",
@@ -58,37 +57,37 @@ class TaskFactoryTest(APITestCase):
 
         self.test_trip1 = self.test_user.trips.create(
             traveler=self.test_user,
-            departure_country="France",
+            departure_country=self.test_country1,
             departure_airport="CDG",
             departure_date_time=datetime(2018, month=1, day=1, hour=18, minute=30, tzinfo=self.tz),
-            arrival_country="China",
+            arrival_country=self.test_country2,
             arrival_airport="PIA",
             arrival_date_time=datetime(2018, month=1, day=2, hour=18, minute=30, tzinfo=self.tz))
 
         self.test_trip2 = self.test_user.trips.create(
             traveler=self.test_user,
-            departure_country="France",
+            departure_country=self.test_country1,
             departure_airport="CDG",
             departure_date_time=datetime(2018, month=1, day=1, hour=18, minute=30, tzinfo=self.tz),
-            arrival_country="France",
+            arrival_country=self.test_country1,
             arrival_airport="LYA",
             arrival_date_time=datetime(2018, month=1, day=1, hour=20, minute=30, tzinfo=self.tz))
 
         self.test_trip3 = self.test_user.trips.create(
             traveler=self.test_user,
-            departure_country="China",
+            departure_country=self.test_country2,
             departure_airport="CAA",
             departure_date_time=datetime(2018, month=1, day=1, hour=18, minute=30, tzinfo=self.tz),
-            arrival_country="China",
+            arrival_country=self.test_country2,
             arrival_airport="CXA",
             arrival_date_time=datetime(2018, month=1, day=1, hour=20, minute=30, tzinfo=self.tz))
 
         self.test_trip4 = self.test_user.trips.create(
             traveler=self.test_user,
-            departure_country="China",
+            departure_country=self.test_country2,
             departure_airport="CAA",
             departure_date_time=datetime(2018, month=1, day=1, hour=18, minute=30, tzinfo=self.tz),
-            arrival_country="France",
+            arrival_country=self.test_country1,
             arrival_airport="CDG",
             arrival_date_time=datetime(2018, month=1, day=2, hour=7, minute=30, tzinfo=self.tz))
 
@@ -97,12 +96,11 @@ class TaskFactoryTest(APITestCase):
             description="Routine Vaccines"
         )
 
-
     def test_create_passport_task0(self):
         """
         Ensure the TaskFactory generate the correct passport task.
         """
-        self.test_tf.trip = self.test_trip1
+        self.test_tf = TaskFactory(self.test_trip1)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -110,31 +108,11 @@ class TaskFactoryTest(APITestCase):
 
         self.assertEqual(len(self.test_tf.tasks), 1)
 
-    def test_create_visa_task0(self):
-        """
-        Ensure the TaskFactory generate the correct visa task
-        If we don't have departure country nor arrival coutry.
-        """
-        self.test_tf.trip = self.test_trip1
-
-        self.assertEqual(len(self.test_tf.tasks), 0)
-
-        self.test_tf.create_visa_task()
-
-        self.assertEqual(len(self.test_tf.tasks), 1)
-
-        visa_task = self.test_tf.tasks[0]
-        self.assertEqual(
-            visa_task.title,
-            "Visa may be needed")
-
     def test_create_visa_task1(self):
         """
         Ensure the TaskFactory generate the correct visa task for trip1.
         """
-        self.test_tf.trip = self.test_trip1
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country2
+        self.test_tf = TaskFactory(self.test_trip1)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -151,9 +129,7 @@ class TaskFactoryTest(APITestCase):
         """
         Ensure the TaskFactory generate the correct visa task for trip2.
         """
-        self.test_tf.trip = self.test_trip2
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country1
+        self.test_tf = TaskFactory(self.test_trip2)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -162,15 +138,13 @@ class TaskFactoryTest(APITestCase):
         self.assertEqual(len(self.test_tf.tasks), 1)
 
         visa_task = self.test_tf.tasks[0]
-        self.assertEqual(visa_task.title, "No Visa needed")
+        self.assertEqual(visa_task.title, "No Visa is needed for this country.")
 
     def test_create_visa_task3(self):
         """
         Ensure the TaskFactory generate the correct visa task for trip3.
         """
-        self.test_tf.trip = self.test_trip3
-        self.test_tf.d_country = self.test_country2
-        self.test_tf.a_country = self.test_country2
+        self.test_tf = TaskFactory(self.test_trip3)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -179,15 +153,13 @@ class TaskFactoryTest(APITestCase):
         self.assertEqual(len(self.test_tf.tasks), 1)
 
         visa_task = self.test_tf.tasks[0]
-        self.assertEqual(visa_task.title, "No Visa needed")
+        self.assertEqual(visa_task.title, "No Visa is needed for this country.")
 
     def test_create_visa_task4(self):
         """
         Ensure the TaskFactory generate the correct visa task for trip4.
         """
-        self.test_tf.trip = self.test_trip3
-        self.test_tf.d_country = self.test_country2
-        self.test_tf.a_country = self.test_country1
+        self.test_tf = TaskFactory(self.test_trip4)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -202,9 +174,7 @@ class TaskFactoryTest(APITestCase):
         """
         Ensure the TaskFactory generate the correct malaria task for trip1.
         """
-        self.test_tf.trip = self.test_trip1
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country2
+        self.test_tf = TaskFactory(self.test_trip1)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -216,9 +186,7 @@ class TaskFactoryTest(APITestCase):
         """
         Ensure the TaskFactory generate the correct malaria task for trip3.
         """
-        self.test_tf.trip = self.test_trip3
-        self.test_tf.d_country = self.test_country2
-        self.test_tf.a_country = self.test_country1
+        self.test_tf = TaskFactory(self.test_trip3)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -230,9 +198,7 @@ class TaskFactoryTest(APITestCase):
         """
         Ensure the TaskFactory generate the correct flight needs task for trip1.
         """
-        self.test_tf.trip = self.test_trip1
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country2
+        self.test_tf = TaskFactory(self.test_trip1)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -243,15 +209,13 @@ class TaskFactoryTest(APITestCase):
         tested_task = self.test_tf.tasks[0]
         self.assertEqual(
             tested_task.comments,
-            "Take your earplugs and your sleep mask for your flight")
+            "It's a long flight ! Don't forget your earplugs and your sleep mask.")
 
     def test_create_flight_needs_task1(self):
         """
         Ensure the TaskFactory generate the correct flight needs task for trip2.
         """
-        self.test_tf.trip = self.test_trip2
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country1
+        self.test_tf = TaskFactory(self.test_trip2)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 
@@ -268,9 +232,7 @@ class TaskFactoryTest(APITestCase):
         """
         Ensure the TaskFactory generate the correct vaccines task for trip1.
         """
-        self.test_tf.trip = self.test_trip1
-        self.test_tf.d_country = self.test_country1
-        self.test_tf.a_country = self.test_country2
+        self.test_tf = TaskFactory(self.test_trip1)
 
         self.assertEqual(len(self.test_tf.tasks), 0)
 

@@ -112,7 +112,7 @@ class TaskFactory:
         """
         Check if country has malaria presence.
         """
-        if self.a_country.malaria_presence:
+        if not self.a_country is self.d_country and self.a_country.malaria_presence:
             self.tasks.append(self.trip.tasks.create(
                 title="Protection against mosquitoes",
                 comments="Insect repellent, insecticide-treated bednet and pre-treating clothing"
@@ -144,7 +144,7 @@ class TaskFactory:
         if duration > timedelta(hours=2):
             self.tasks.append(self.trip.tasks.create(
                 title="Flight Must Have !",
-                comments="It's a long flight ! Don't forget your earplugs and your sleep mask. "
+                comments="It's a long flight ! Don't forget your earplugs and your sleep mask."
             ))
         else:
             self.tasks.append(self.trip.tasks.create(

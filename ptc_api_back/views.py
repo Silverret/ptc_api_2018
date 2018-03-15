@@ -5,7 +5,7 @@ import re
 
 from django.contrib.auth.models import User
 
-from rest_framework import permissions, viewsets
+from rest_framework import permissions, viewsets, mixins
 from rest_framework.decorators import api_view, permission_classes, detail_route
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -14,7 +14,7 @@ from rest_framework.permissions import IsAuthenticated
 from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
 from ptc_api_back.permissions import IsUserOrIsAdminUser, IsTravelerOrIsAdminUser, IsTripTravelerOrAdminUser
 from ptc_api_back.serializers import UserSerializer, ProfileSerializer, TripSerializer, SegmentSerializer
-from ptc_api_back.serializers import TaskSerializer, CountrySerializer, AirportSerializer
+from ptc_api_back.serializers import TaskSerializer, CountryListSerializer, CountrySerializer, AirportSerializer
 
 
 class TaskViewSet(viewsets.ModelViewSet):
@@ -89,15 +89,15 @@ class TripViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         d_country = self.request.data['departure_country']
         a_country = self.request.data['arrival_country']
-        if not bool(re.match(r'^[A-Z]{2}$', d_country)):
+        if not bool(re.match(r'^[a-zA-Z\(\)\s,\'\-\.]{1,63}$', d_country)):
             return
-        if not bool(re.match(r'^[A-Z]{2}$', a_country)):
+        if not bool(re.match(r'^[a-zA-Z\(\)\s,\'\-\.]{1,63}$', a_country)):
             return
         
         serializer.save(
             traveler=self.request.user,
-            departure_country=Country.objects.get(code=d_country),
-            arrival_country=Country.objects.get(code=a_country))
+            departure_country=Country.objects.get(name=d_country),
+            arrival_country=Country.objects.get(name=a_country))
 
     @detail_route(methods=['GET'])
     def generate_tasks(self, request, *args, **kwargs):
@@ -156,10 +156,21 @@ class UserViewSet(viewsets.ModelViewSet):
         return User.objects.filter(id=user.id)
 
 
-class CountryListViewSet(viewsets.ModelViewSet):
+class CountryListViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Country.objects.all()
-    serializer_class = CountrySerializer
     permission_classes = [IsAuthenticated]
+    lookup_field = 'name'
+
+    serializer_class = CountrySerializer
+    action_serializers = {
+        'retrieve': CountrySerializer,
+        'list': CountryListSerializer}
+ 
+    def get_serializer_class(self):
+        if hasattr(self, 'action_serializers'):
+            if self.action in self.action_serializers:
+                return self.action_serializers[self.action]
+
 
 class AirportListViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Airport.objects.all()

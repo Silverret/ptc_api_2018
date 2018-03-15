@@ -11,7 +11,7 @@ from rest_framework.test import RequestsClient
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 
-from ptc_api_back.models import Trip
+from ptc_api_back.models import Trip, Country
 
 
 class TasksVieuTest(APITestCase):
@@ -23,15 +23,25 @@ class TasksVieuTest(APITestCase):
         - 1 Trip
         """
         self.test_user = User.objects.create_user("lauren", "secret")
-
         self.tz = timezone.now().tzinfo
+        
+        self.test_country1 = Country.objects.create(
+            name="France",
+            code="FR",
+            advisory_state=1,
+            malaria_presence=False)
+        self.test_country2 = Country.objects.create(
+            name="China",
+            code="CN",
+            advisory_state=1,
+            malaria_presence=True)
 
         self.test_trip = Trip.objects.create(
             traveler=self.test_user,
-            departure_country="France",
+            departure_country=self.test_country1,
             departure_airport="CDG",
             departure_date_time=datetime(2018, month=1, day=1, hour=18, minute=30, tzinfo=self.tz),
-            arrival_country="China",
+            arrival_country=self.test_country2,
             arrival_airport="PIA",
             arrival_date_time=datetime(2018, month=1, day=18, hour=18, minute=30, tzinfo=self.tz))
 
@@ -46,7 +56,7 @@ class TasksVieuTest(APITestCase):
         trip_id = self.test_trip.id
         old_tasks_count = self.test_trip.tasks.count()
         response = client.post(
-            'http://localhost:8000/tasks/',
+            'http://127.0.0.1:8000/tasks/',
             json={
                 "trip": trip_id,
                 "title": "Test",
@@ -72,7 +82,7 @@ class TasksVieuTest(APITestCase):
         trip_id = self.test_trip.id
         old_tasks_count = self.test_trip.tasks.count()
         response = client.post(
-            'http://localhost:8000/tasks/',
+            'http://127.0.0.1:8000/tasks/',
             json={
                 "trip": trip_id,
                 "title": "Test",
@@ -101,7 +111,7 @@ class TasksVieuTest(APITestCase):
         trip_id = self.test_trip.id
         old_tasks_count = self.test_trip.tasks.count()
         response = client.post(
-            'http://localhost:8000/tasks/',
+            'http://127.0.0.1:8000/tasks/',
             json={
                 "trip": trip_id,
                 "title": "Test",

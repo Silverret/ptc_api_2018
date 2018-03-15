@@ -10,7 +10,14 @@ class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
         fields = ('name', 'code', 'image')
-        read_only_fields = ('id', 'name', 'code')
+        read_only_fields = ('id', 'name', 'code', 'image')
+
+class CountryListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Country
+        fields = ('name',)
+        read_only_fields = ('id', 'name')
 
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
@@ -68,8 +75,14 @@ class TripSerializer(serializers.HyperlinkedModelSerializer):
         many=False, view_name='user-detail', read_only=True)
     segments = serializers.HyperlinkedRelatedField(
         many=True, read_only=True, view_name='segment-detail')
-    departure_country = CountrySerializer(many=False, read_only=True)
-    arrival_country = CountrySerializer(many=False, read_only=True)
+    departure_country = serializers.SlugRelatedField(
+        many=False,
+        queryset=Country.objects.all(),
+        slug_field='name')
+    arrival_country = serializers.SlugRelatedField(
+        many=False,
+        queryset=Country.objects.all(),
+        slug_field='name')
 
     class Meta:
         model = Trip
