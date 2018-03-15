@@ -4,7 +4,7 @@ This is the magic !
 In this module, we generate the specific required tasks for each trip !
 """
 from datetime import timedelta
-from ptc_api_back.models import Country, Climate
+from ptc_api_back.models import Country, Climate, TaskCategory
 
 
 class TaskFactory:
@@ -51,14 +51,19 @@ class TaskFactory:
         self.tasks.append(self.trip.tasks.create(
             title="Check Passport Validity Date",
             comments="Most of the time, your passport has to be valid " +\
-            "at least three months after your departure."
+            "at least three months after your departure.",
+            category=TaskCategory.objects.get(name="Paperwork"),
+            deadline=self.trip.departure_date_time - timedelta(days=2*30)
         ))
 
     def create_visa_task(self):
 
         if self.d_country is self.a_country:
             self.tasks.append(self.trip.tasks.create(
-                title="No Visa is needed for this country."))
+                title="No Visa is needed for this country.",
+                category=TaskCategory.objects.get(name="Paperwork"),
+                deadline=self.trip.departure_date_time - timedelta(days=1*30)
+            ))
             return
 
         common_unions = set()
@@ -69,7 +74,11 @@ class TaskFactory:
         if bool(common_unions):
             for union in common_unions:
                 if not union.t_visa_between_members:
-                    self.tasks.append(self.trip.tasks.create(title="No Visa is needed for this country."))
+                    self.tasks.append(self.trip.tasks.create(
+                        title="No Visa is needed for this country.",
+                        category=TaskCategory.objects.get(name="Paperwork"),
+                        deadline=self.trip.departure_date_time - timedelta(days=1*30)
+                    ))
                     return
 
         common_visa_unions = self.a_country.countryunion_set.filter(common_visa=True)
@@ -79,12 +88,17 @@ class TaskFactory:
                 str_visa_list += "\n\t- "+union.name+""'s Visa'
             self.tasks.append(self.trip.tasks.create(
                 title="A Visa is needed",
-                comments="You have the choice between :" + str_visa_list))
+                comments="You have the choice between :" + str_visa_list,
+                category=TaskCategory.objects.get(name="Paperwork"),
+                deadline=self.trip.departure_date_time - timedelta(days=1*30)
+            ))
             return
 
         self.tasks.append(self.trip.tasks.create(
             title=self.a_country.name + "'s Visa needed",
-            comments="Contact the Ambassy of the destination country."
+            comments="Contact the Ambassy of the destination country.",
+            category=TaskCategory.objects.get(name="Paperwork"),
+            deadline=self.trip.departure_date_time - timedelta(days=1*30)
         ))
 
     def create_vaccines_task(self):
@@ -100,13 +114,17 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check vaccines",
                 comments=comments[:-1],
-                deadline=self.trip.departure_date_time - timedelta(days=45)))
+                category=TaskCategory.objects.get(name="Health"),
+                deadline=self.trip.departure_date_time - timedelta(days=45)
+            ))
             return
 
         self.tasks.append(self.trip.tasks.create(
             title="Check vaccines for " + self.a_country.name,
             comments="Both required and advised vaccines !",
-            deadline=self.trip.departure_date_time - timedelta(days=45)))
+            category=TaskCategory.objects.get(name="Health"),
+            deadline=self.trip.departure_date_time - timedelta(days=45)
+        ))
 
     def create_malaria_task(self):
         """
@@ -115,7 +133,9 @@ class TaskFactory:
         if not self.a_country is self.d_country and self.a_country.malaria_presence:
             self.tasks.append(self.trip.tasks.create(
                 title="Protection against mosquitoes",
-                comments="Insect repellent, insecticide-treated bednet and pre-treating clothing"
+                comments="Insect repellent, insecticide-treated bednet and pre-treating clothing",
+                category=TaskCategory.objects.get(name="Health"),
+                deadline=self.trip.departure_date_time - timedelta(days=3)
             ))
 
     def create_weather_task(self):
@@ -127,13 +147,17 @@ class TaskFactory:
             climate = Climate.objects.get(country=self.a_country)
             self.tasks.append(self.trip.tasks.create(
                 title=f"Check climate in {self.a_country.name}",
-                comments=climate.description
+                comments=climate.description,
+                category=TaskCategory.objects.get(name="Others"),
+                deadline=self.trip.departure_date_time - timedelta(days=3)
             ))
         except (Climate.DoesNotExist, Country.DoesNotExist):
             self.tasks.append(self.trip.tasks.create(
                 title="Check meteo",
-                comments="Check weather conditions in " +
-                self.a_country.name + " and prepare appropriate clothing"
+                comments="Check weather conditions in " + self.a_country.name +\
+                " and prepare appropriate clothing",
+                category=TaskCategory.objects.get(name="Others"),
+                deadline=self.trip.departure_date_time - timedelta(days=3)
             ))
 
     def create_flight_needs_task(self):
@@ -144,12 +168,16 @@ class TaskFactory:
         if duration > timedelta(hours=2):
             self.tasks.append(self.trip.tasks.create(
                 title="Flight Must Have !",
-                comments="It's a long flight ! Don't forget your earplugs and your sleep mask."
+                comments="It's a long flight ! Don't forget your earplugs and your sleep mask.",
+                category=TaskCategory.objects.get(name="Others"),
+                deadline=self.trip.departure_date_time - timedelta(days=1)
             ))
         else:
             self.tasks.append(self.trip.tasks.create(
                 title="Flight Must Have !",
-                comments="Take some food and some drinks for your flight"
+                comments="Take some food and some drinks for your flight",
+                category=TaskCategory.objects.get(name="Others"),
+                deadline=self.trip.departure_date_time - timedelta(days=1)
             ))
 
     def create_banking_task(self):
@@ -157,7 +185,9 @@ class TaskFactory:
             title="Check your banking fees",
             comments="Contact your bank account manager " +\
             "to ask him about the amount of banking fees you will have to pay " +\
-            "when you use your credit card at the destination."
+            "when you use your credit card at the destination.",
+            category=TaskCategory.objects.get(name="Paperwork"),
+            deadline=self.trip.departure_date_time - timedelta(days=10)
         ))
 
     def create_insurance_task(self):
@@ -166,27 +196,37 @@ class TaskFactory:
             self.tasks.append(self.trip.tasks.create(
                 title="Check repatriation insurance",
                 comments="It seems to be recommended for this country !" if level > 0\
-                    else "Not absolutely required but if you need this to relax, go on :-)"
+                    else "Not absolutely required but if you need this to relax, go on :-)",
+                category=TaskCategory.objects.get(name="Paperwork"),
+                deadline=self.trip.departure_date_time - timedelta(days=14)
             ))
         else:
             self.tasks.append(self.trip.tasks.create(
                 title="Check required insurance",
-                comments="We got no information for your country, sorry !"
+                comments="We got no information for your country, sorry !",
+                category=TaskCategory.objects.get(name="Paperwork"),
+                deadline=self.trip.departure_date_time - timedelta(days=14)
             ))
 
     def create_systematic_tasks(self):
         self.tasks.append(self.trip.tasks.create(
             title="Check cabin baggage dimensions",
-            comments="Check what are the maximum dimensions of baggages allowed on board."
+            comments="Check what are the maximum dimensions of baggages allowed on board.",
+            category=TaskCategory.objects.get(name="Others"),
+            deadline=self.trip.departure_date_time - timedelta(days=5)
         ))
         self.tasks.append(self.trip.tasks.create(
             title="Labels on your baggages",
-            comments="It really helps if your baggages are lost during the flight !"
+            comments="It really helps if your baggages are lost during the flight !",
+            category=TaskCategory.objects.get(name="Others"),
+            deadline=self.trip.departure_date_time - timedelta(days=1)
         ))
         self.tasks.append(self.trip.tasks.create(
             title="Make copies of your pappers.",
             comments="Make sure you have duplicates of your visa and your passport. " +\
-            "Save them on your smartphone or have them retrievable from the internet."
+            "Save them on your smartphone or have them retrievable from the internet.",
+            category=TaskCategory.objects.get(name="Others"),
+            deadline=self.trip.departure_date_time - timedelta(days=2)
         ))
 
     def create_long_travel_task(self):

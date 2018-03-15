@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from rest_framework.test import APITestCase
 
 from ptc_api_back.task_factory import TaskFactory
-from ptc_api_back.models import Country, CountryUnion
+from ptc_api_back.models import Country, CountryUnion, TaskCategory
 
 class TaskFactoryTest(APITestCase):
     """
@@ -38,6 +38,7 @@ class TaskFactoryTest(APITestCase):
         self.tz = timezone.now().tzinfo
         self.test_user = User.objects.create_user("lauren", "secret")
         self.tf = None
+
         self.test_country1 = Country.objects.create(
             name="France",
             code="FR",
@@ -48,6 +49,10 @@ class TaskFactoryTest(APITestCase):
             code="CN",
             advisory_state=1,
             malaria_presence=True)
+
+        TaskCategory.objects.create(name='Others')
+        TaskCategory.objects.create(name='Health')
+        TaskCategory.objects.create(name='Paperwork')
 
         self.test_country_union = CountryUnion.objects.create(
             name="Schengen Area",

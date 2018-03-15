@@ -11,7 +11,7 @@ from rest_framework.test import RequestsClient
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 
-from ptc_api_back.models import Trip, Country
+from ptc_api_back.models import Trip, Country, TaskCategory
 
 
 class TasksVieuTest(APITestCase):
@@ -35,6 +35,10 @@ class TasksVieuTest(APITestCase):
             code="CN",
             advisory_state=1,
             malaria_presence=True)
+
+        TaskCategory.objects.create(name='Others')
+        TaskCategory.objects.create(name='Health')
+        TaskCategory.objects.create(name='Paperwork')
 
         self.test_trip = Trip.objects.create(
             traveler=self.test_user,

@@ -18,7 +18,7 @@ class Country(models.Model):
     malaria_presence = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return f'<Country: {self.name}>'
 
 class Profile(models.Model):
     """
@@ -106,12 +106,19 @@ class Segment(models.Model):
         unique_together = ['order', 'trip']
 
 
+class TaskCategory(models.Model):
+    """
+    A category for several tasks.
+    """
+    name= models.CharField(max_length=63)
 
 class Task(models.Model):
     """
     A task is an item of the to-do list of the traveler before their departure.
     """
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='tasks')
+    defaultCategory = TaskCategory.objects.get(name='Others')
+    category = models.ForeignKey(TaskCategory, on_delete=models.CASCADE, related_name='tasks', default=defaultCategory.id)
 
     title = models.CharField(max_length=255)
     deadline = models.DateField(null=True, blank=True)

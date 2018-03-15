@@ -22,6 +22,7 @@ class CountryListSerializer(serializers.ModelSerializer):
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
     trip = serializers.PrimaryKeyRelatedField(read_only=True)
+    category = serializers.SlugRelatedField(many=False, read_only=True, slug_field='name')
 
     class Meta:
         model = Task

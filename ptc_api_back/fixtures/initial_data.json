@@ -2381,7 +2381,7 @@
         "model": "ptc_api_back.country",
         "pk": 238,
         "fields": {
-            "name": "Virgin Islands, U.S.",
+            "name": "Virgin Islands, US",
             "code": "VI",
             "advisory_state": null,
             "malaria_presence": false
@@ -5335,6 +5335,27 @@
         "fields": {
             "description": "Iran is located in an active seismic area. Be aware of appropriate steps to take in case of an earthquake. Transportation, health and telecommunications services may be affected, and land travel could be disrupted. Monitor local news reports, avoid disaster areas and follow the advice of local authorities.Dust storms and sand storms may occur in some areas.",
             "country": 103
+        }
+    },
+    {
+        "model": "ptc_api_back.taskcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Others"
+        }
+    },
+    {
+        "model": "ptc_api_back.taskcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Health"
+        }
+    },
+    {
+        "model": "ptc_api_back.taskcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Paperwork"
         }
     },
     {
