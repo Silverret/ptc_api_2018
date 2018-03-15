@@ -116,9 +116,9 @@ class Task(models.Model):
     """
     A task is an item of the to-do list of the traveler before their departure.
     """
+    
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='tasks')
-    defaultCategory = TaskCategory.objects.get(name='Others')
-    category = models.ForeignKey(TaskCategory, on_delete=models.CASCADE, related_name='tasks', default=defaultCategory.id)
+    category = models.ForeignKey(TaskCategory, on_delete=models.CASCADE, related_name='tasks', default=1)
 
     title = models.CharField(max_length=255)
     deadline = models.DateField(null=True, blank=True)
