@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
 from django.contrib.auth.models import User
 
-from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport
+from ptc_api_back.models import Trip, Segment, Task, Profile, Country, Airport, TaskCategory
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -22,7 +22,10 @@ class CountryListSerializer(serializers.ModelSerializer):
 
 class TaskSerializer(serializers.HyperlinkedModelSerializer):
     trip = serializers.PrimaryKeyRelatedField(read_only=True)
-    category = serializers.SlugRelatedField(many=False, read_only=True, slug_field='name')
+    category = serializers.SlugRelatedField(
+        many=False, 
+        queryset=TaskCategory.objects.all(),
+        slug_field='name')
 
     class Meta:
         model = Task
@@ -46,6 +49,8 @@ class SegmentSerializer(serializers.HyperlinkedModelSerializer):
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     traveler = serializers.HyperlinkedRelatedField(
         many=False, view_name='user-detail', read_only=True)
+    residence_country = CountrySerializer()
+    visited_countries = CountryListSerializer(many=True)
 
     class Meta:
         model = Profile

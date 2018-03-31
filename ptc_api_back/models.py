@@ -25,13 +25,13 @@ class Profile(models.Model):
     The profile of users contains every information about them
     """
     traveler = models.OneToOneField(User, on_delete=models.CASCADE)
+    residence_country = models.ForeignKey(Country, related_name='cizitens', null=True, on_delete=models.CASCADE)
+    visited_countries = models.ManyToManyField(Country)
 
     nationalities = models.CharField(max_length=255)  # Country names please !
-    residence_country = models.CharField(max_length=255)
     birth_date = models.DateField(null=True, blank=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
-    visited_countries = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         return f'{self.traveler.username}'

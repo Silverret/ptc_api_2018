@@ -64,6 +64,7 @@ class TasksVieuTest(APITestCase):
             json={
                 "trip": trip_id,
                 "title": "Test",
+                "category": "Health",
                 "deadline": None,
                 "completed": True,
                 "comments": "ceci est un test",

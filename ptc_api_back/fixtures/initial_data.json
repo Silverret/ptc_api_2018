@@ -5399,12 +5399,15 @@
         "pk": 1,
         "fields": {
             "traveler": 1,
-            "nationalities": "",
-            "residence_country": "",
-            "birth_date": null,
-            "address": null,
-            "phone": null,
-            "visited_countries": null
+            "nationalities": "french",
+            "residence_country": 74,
+            "birth_date": "1994-04-27",
+            "address": "13 Avenue Sully Prudhomme, 92290 CHâtenay-Malabry, France",
+            "phone": "0688888888",
+            "visited_countries": [
+                236,
+                229
+            ]
         }
     },
     {
@@ -5413,11 +5416,13 @@
         "fields": {
             "traveler": 18,
             "nationalities": "",
-            "residence_country": "",
+            "residence_country": 74,
             "birth_date": null,
             "address": null,
             "phone": null,
-            "visited_countries": null
+            "visited_countries": [
+                74
+            ]
         }
     },
     {
