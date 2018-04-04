@@ -110,10 +110,10 @@ class TaskFactory:
         if bool(vaccines):
             comments = ""
             for vaccine in vaccines:
-                comments += "\t- "+vaccine.category+"\n"
+                comments += vaccine.category+" - "
             self.tasks.append(self.trip.tasks.create(
                 title="Check vaccines",
-                comments=comments[:-1],
+                comments=comments[:-3],
                 category=TaskCategory.objects.get(name="Health"),
                 deadline=self.trip.departure_date_time - timedelta(days=45)
             ))
@@ -234,6 +234,7 @@ class TaskFactory:
         #TODO
         """
         self.tasks.append(self.trip.tasks.create(
-            title="Long travel To-Do",
-            comments=""
+            title="Do you have a pet?",
+            comments="Don't forget to make sure it is looked after.",
+            category=TaskCategory.objects.get(name="Others"),
         ))
